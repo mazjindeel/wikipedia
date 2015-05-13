@@ -27,21 +27,24 @@ int main()
         //need to check for colon and others separately, because article name may have colon
         if(line.find(":") == std::string::npos) //if there's a colon, see if any of the non-articles are present
         {
-            std::cout << "found a colon\n";
             for(int i = 0; i < namespaces->size(); i++)
             {
                 if(line.find(namespaces[i]) != std::string::npos) //if a forbidden word is found
                 {
-                    std::cout << "forbidding" << line << "\n";
                     write = false;
-                    break;//does this break both loops or just the one?
                 }
             }
-            if(write)
-            {
-                std::cout << "writing" << line << std::endl;
-                writer << line << std::endl;
-            }
+        }
+        if(write)
+        {
+            //std::cout << "writing" << line << std::endl;
+            std::cout << "w\n";
+            writer << line << std::endl;
+        }
+        else if(!write)
+        {
+            //this never runs?
+            std::cout << "forbidding" << line << std::endl;
         }
     }
     reader.close();
