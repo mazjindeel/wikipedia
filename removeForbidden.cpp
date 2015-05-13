@@ -4,31 +4,44 @@
 
 int main()
 {
+    //paths for all output files
+    std::string parsedInputFile = "wikiParsed.txt";
+    std::string parsedOutputFile = "wikiFullyParsed.txt"; 
+    //std::string parsedOutput = "hddWikipedia/wikiFullyParsed.txt"; 
+    std::string forbiddenFile = "forbiddenPages.txt"; 
+    std::string namespaceFile = "namespaces.txt";
     std::ifstream reader;
     std::ofstream writer;
     std::string line;
     //read in list of forbidden phrases
-    reader.open("namespaces.txt");
+    reader.open(namespaceFile);
     std::getline(reader, line);
-    int namespaceCount = std::stoi(line); 
+    int namespaceCount = std::stoi(line);
+    int forbiddenPages = 0, writtenPages = 0; 
+    std::string forbiddenText = "";
     std::string* namespaces = new std::string[namespaceCount]; 
     for(int i = 0; i < namespaceCount; i++)
     {
         std::getline(reader, line);
+        std::cout << "line: " << line << "\n";
         namespaces[i] = line;
     }
     reader.close();
     //output line if string isn't there, otherwise stop analyzing it and move on
-    reader.open("wikiParsed.txt");
-    writer.open("hddWikipedia/wikiFullyParsed.txt");
+    reader.open(parsedInputFile);
+    //writer.open("hddWikipedia/wikiFullyParsed.txt");
+    writer.open(parsedOutputFile);
     while(std::getline(reader, line))
     {
         bool write = true;
         //need to check for colon and others separately, because article name may have colon
-        if(line.find(":") == std::string::npos) //if there's a colon, see if any of the non-articles are present
+        //std::cout << line << "\n";
+        if(line.find(":") != std::string::npos) //if there's a colon, see if any of the non-articles are present
         {
-            for(int i = 0; i < namespaces->size(); i++)
+            //std::cout << "found a colon in line: " << line << "\n";
+            for(int i = 0; i < namespaceCount; i++)
             {
+                //std::cout << "searching for: " << namespaces[i];
                 if(line.find(namespaces[i]) != std::string::npos) //if a forbidden word is found
                 {
                     write = false;
@@ -37,16 +50,27 @@ int main()
         }
         if(write)
         {
-            //std::cout << "writing" << line << std::endl;
-            std::cout << "w\n";
-            writer << line << std::endl;
+            std::cout << "writing" << line << "\n";
+            writtenPages++;
+            //std::cout << "w\n";
+            writer << line << "\n";
         }
         else if(!write)
         {
             //this never runs?
-            std::cout << "forbidding" << line << std::endl;
+            std::cout << "forbidding" << line << "\n";
+            //a naive approach? maybe buffer this or separate reader...
+            forbiddenText += line + "\n"; 
+            forbiddenPages++;
         }
     }
+    writer.close();
+    writer.open(forbiddenFile);
+    writer << forbiddenText;
+    writer.flush();
+    std::cout << "forbid: " << forbiddenPages << "\n";
+    std::cout << "wrote: " << writtenPages << "\n";
+    std::cout << "total: " << forbiddenPages + writtenPages << "\n";
     reader.close();
     writer.close();
 }
