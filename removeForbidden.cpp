@@ -7,23 +7,26 @@ int main()
     //paths for all output files
     std::string parsedInputFile = "wikiParsed.txt";
     std::string parsedOutputFile = "wikiFullyParsed.txt"; 
-    //std::string parsedOutput = "hddWikipedia/wikiFullyParsed.txt"; 
+    parsedOutputFile = "hddWikipedia/wikiFullyParsed.txt"; 
     std::string forbiddenFile = "forbiddenPages.txt"; 
+    forbiddenFile = "hddWikipedia/forbiddenPages.txt";
     std::string namespaceFile = "namespaces.txt";
+
     std::ifstream reader;
     std::ofstream writer;
+    std::ofstream forbiddenWriter;
+    forbiddenWriter.open(forbiddenFile);
     std::string line;
     //read in list of forbidden phrases
     reader.open(namespaceFile);
     std::getline(reader, line);
     int namespaceCount = std::stoi(line);
     int forbiddenPages = 0, writtenPages = 0; 
-    std::string forbiddenText = "";
     std::string* namespaces = new std::string[namespaceCount]; 
     for(int i = 0; i < namespaceCount; i++)
     {
         std::getline(reader, line);
-        std::cout << "line: " << line << "\n";
+        //std::cout << "line: " << line << "\n";
         namespaces[i] = line;
     }
     reader.close();
@@ -50,27 +53,23 @@ int main()
         }
         if(write)
         {
-            std::cout << "writing" << line << "\n";
+            //std::cout << "writing" << line << "\n";
             writtenPages++;
             //std::cout << "w\n";
             writer << line << "\n";
         }
         else if(!write)
         {
-            //this never runs?
-            std::cout << "forbidding" << line << "\n";
-            //a naive approach? maybe buffer this or separate reader...
-            forbiddenText += line + "\n"; 
+            //std::cout << "forbidding" << line << "\n";
+            forbiddenWriter << line;
             forbiddenPages++;
         }
     }
-    writer.close();
-    writer.open(forbiddenFile);
-    writer << forbiddenText;
-    writer.flush();
+
     std::cout << "forbid: " << forbiddenPages << "\n";
     std::cout << "wrote: " << writtenPages << "\n";
     std::cout << "total: " << forbiddenPages + writtenPages << "\n";
+    forbiddenWriter.close();
     reader.close();
     writer.close();
 }
