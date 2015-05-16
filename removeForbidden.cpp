@@ -1,9 +1,24 @@
+/* Author: Mazin Jindeel
+** Date: 5/15
+** Functionality: This utility is designed to remove namespaces from parsed Wikipedia data. 
+** Usage: To run this utility, you must provide a minimum of two arguments: the original, parsed file (with namespaces) as well as the output path. However, there are also some switches you can use to configure the program. 
+Namespaces: If you wish to override the default namespaces.txt file, it is recommended that you merely add your namespaces to that file. Make sure to update the namespace counter at the top. The provided file removes most main namespaces, as of May 2015. However, if you want to overwrite the file, provide the switch 
+-n <fileNameSpaces>.  
+Forbidden Pages: This utility also logs any records that are not being included in the final output in a separate file. On slower filesystems or systems, it may be in your best interest to disable this logging feature. To do this, use the following:
+-l <true/false>. 
+A value of "true" will enable logging, false will disable it
+You can also specify a path to the log file with the following switch:
+-log <fileName>
+*/ 
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 //TODO: args from readme
-int main()
+//arg1 is the 
+int main(int argc, char* argv[])
 {
+    //default values
     //paths for all output files
     std::string parsedInputFile = "wikiParsed.txt";
     std::string parsedOutputFile = "wikiFullyParsed.txt"; 
@@ -11,7 +26,34 @@ int main()
     std::string forbiddenFile = "forbiddenPages.txt"; 
     forbiddenFile = "hddWikipedia/forbiddenPages.txt";
     std::string namespaceFile = "namespaces.txt";
+    bool log = true;
 
+    //deal with command line args
+    if(argc > 2) //if there was an input/output file specified at least
+    {
+        parsedInputFile = argv[1];
+        parsedOutputFile = argv[2];
+        for(int i = 2; i < argc; i++) //iterate through remaining arguments
+        {
+            if(strcmp(argv[i], "-l") == 0)
+            {
+                //if argument is "false", set log to false, otherwise set to true
+                log = strcmp(argv[i+1], "false") != 0;       
+                i++; //skip next item
+            } 
+            else if(strcmp(argv[i], "-log") == 0)
+            {
+                forbiddenFile = argv[i+1];
+                i++;
+            }
+            else if(strcmp(argv[i], "-n") == 0)
+            {
+                namespaceFile = argv[i+1];
+                i++;
+            }
+            
+        }
+    }
     std::ifstream reader;
     std::ofstream writer;
     std::ofstream forbiddenWriter;
@@ -61,7 +103,8 @@ int main()
         else if(!write)
         {
             //std::cout << "forbidding" << line << "\n";
-            forbiddenWriter << line;
+            if(log)
+                forbiddenWriter << line;
             forbiddenPages++;
         }
     }
