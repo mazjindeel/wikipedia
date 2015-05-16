@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+//TODO: args from readme
 int main()
 {
     //paths for all output files
