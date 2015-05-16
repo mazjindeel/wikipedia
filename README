@@ -1,0 +1,35 @@
+Author: Mazin Jindeel
+Date: 5/15
+Functionality: Find the most interconnected wikipedia pages
+
+Instructions:
+
+Note: each step may take a while, depending on your system's limitations.  
+
+1: Download dataset
+    download the wikipedia dataset in XML. 
+    You can find the download link here
+    http://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia
+    Note: you will need at about 12GB free on your disk to complete this step. 
+
+2: uncompress the data. 
+    Note: uncompressed, the dataset expands to about 50GB, so you will need at least that much space free on your disk. 
+
+3: run parseScript.sh to extract just titles and links 
+    type 'bash parseScript.sh arg1 arg2'
+    The first argument should be the uncompressed file
+    The second argument is wherever you want the output to be located
+    Note: dataset should shrink to ~10GB, so have at least that much space free. 
+
+4: remove namespace links by making and running removeForbidden
+    Many "links" are not actually linking to other pages, but separate namespaces
+    We need to remove these faux "links", since they don't link to actual pages
+    steps to make and run removeForbidden:
+        1. type 'make removeForbidden' to make the utility
+        2. make sure the file 'namespaces.txt' is in the same directory as the removeForbidden (by default, this should be the case)
+        3. type './removeForbidden arg1 arg2' to run the utility
+            arg1 is the path of your input file
+            arg2 is the path of the output file
+            read the documentation in removeForbidden.cpp to view all the arguments you can provide and what their functionality is. 
+
+    Note: you will need an equivalent amount of data as the file generated in step 3 to run this utility with default settings. 
