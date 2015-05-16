@@ -8,3 +8,6 @@ removeForbidden: removeForbidden.o
 
 removeForbidden.o: removeForbidden.cpp
 	$(CC) $(CXXFLAGS) removeForbidden.cpp
+
+clean:
+	rm *.o removeForbidden
