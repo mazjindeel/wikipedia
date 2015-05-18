@@ -23,9 +23,9 @@ std::string parseTitle(std::string line);
 bool isTitle(std::string line);
 bool checkForbidden(std::string line, std::string *namespaces, int namespaceCount);
 //return id if exists, enter to table and return id if not
-int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line);
+int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter);
 //do nothing if exists, else enter to table
-int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int currentId, int toId);
+int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int currentId, int toId, int *existsCounter);
 //method to take int* in data, return times it was called in that var
 static int callbacktrack(void *data, int argc, char **argv, char**columnNames);
 
@@ -99,7 +99,8 @@ int main(int argc, char* argv[])
     reader.open(namespaceFile);
     std::getline(reader, line);
     int namespaceCount = std::stoi(line);
-    int forbiddenPages = 0, writtenPages = 0; 
+    int forbiddenPages = 0, writtenPages = 0, writtenTitles = 0, writtenLinks = 0; 
+    int existingLinkCount = 0, existingTitleCount = 0;
     std::string* namespaces = new std::string[namespaceCount]; 
     for(int i = 0; i < namespaceCount; i++)
     {
@@ -131,20 +132,21 @@ int main(int argc, char* argv[])
             if(title)//it's a title, we're on a new adj list
             {
                 line = parseTitle(line);
-                currentId = getTitleId(adjDb, insertTitle, titleQuery, line);
-                 
+                currentId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount);
+                writtenTitles++; 
             }
             else if(!title)//its a link
             {
                 line = parseLink(line);
                 //insert into db if it's not there...
-                int toId = getTitleId(adjDb, insertTitle, titleQuery, line);
-                int linkId = getLinkId(adjDb, insertLink, linkQuery, currentId, toId);
+                int toId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount);
+                int linkId = getLinkId(adjDb, insertLink, linkQuery, currentId, toId, &existingLinkCount);
+                writtenLinks++;
             }
             //write to db
             
             //std::cout << "writing" << line << "\n";
-            //writtenPages++;
+            writtenPages++;
             //std::cout << "w\n";
             //writer << line << "\n";
         }
@@ -157,8 +159,14 @@ int main(int argc, char* argv[])
         }
     }
 
-    std::cout << "forbid: " << forbiddenPages << "\n";
+    //end sqlite transaction
+    sqlite3_exec(adjDb, "END TRANSACTION", NULL, NULL, &sErrMsg);
+
+    std::cout << "\nforbid: " << forbiddenPages << "\n";
     std::cout << "wrote: " << writtenPages << "\n";
+    std::cout << "titles: " << writtenTitles << "\n";
+    std::cout << "links: " << writtenLinks << "\n";
+    std::cout << "pages existing: " << existingTitleCount << " links existing: " << existingLinkCount << "\n";
     std::cout << "total: " << forbiddenPages + writtenPages << "\n";
     forbiddenWriter.close();
     reader.close();
@@ -201,23 +209,25 @@ std::string parseTitle(std::string line)
     //we want everything between <title> and </title> tags
     //so, everything for position 6, string length will be length - 15 
     //because <title></title> is 15 characters
-    return line.substr(6, line.length()-15);     
+    return line.substr(7, line.length()-15);     
 }
 
 std::string parseLink(std::string line)
 {
     //first thing is to evaluate if there's a | 
-    unsigned int horPos = line.find("|");
-    if(horPos != std::string::npos) //if there's a |
+    int horPos = line.find("|");
+    if(horPos != -1) //if there's a |
     {
+        //std::cout << "had a | \n";
         //part before | is the title being linked to
         //so, from position 2 (because of [[ with length horPos - 2 
         return line.substr(2, horPos-2);
     }
-    else if(horPos == std::string::npos) //if there's no |
+    else if(horPos == -1) //if there's no |
     {
+        //std::cout << "no |\n";
         //return substring from position 2 with length len-4
-        return line.substr(2, line.length() -4);
+        return line.substr(2, line.length() - 4);
     }
 }
 
@@ -227,7 +237,7 @@ static int callbacktrack(void *data, int argc, char **argv, char**columnNames)
     return 0;
 }
 
-int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line) 
+int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter) 
 {
     //insert into db if it's not there
     sqlite3_bind_text(titleQuery, 1, line.c_str(), -1, SQLITE_TRANSIENT);
@@ -237,6 +247,7 @@ int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQue
         int id = sqlite3_column_int(titleQuery, 1);
         sqlite3_clear_bindings(titleQuery);
         sqlite3_reset(titleQuery);
+        *(existsCounter)++;
         return id;
     }
     else if(sqlite3_data_count(titleQuery) == 0)
@@ -254,7 +265,7 @@ int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQue
 
 }
 
-int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int fromId, int toId)
+int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int fromId, int toId, int *existsCounter)
 {
     //insert into db if it's not there
     sqlite3_bind_int(linkQuery, 1, fromId);
@@ -265,6 +276,7 @@ int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery,
         int id = sqlite3_column_int(linkQuery, 1);
         sqlite3_clear_bindings(linkQuery);
         sqlite3_reset(linkQuery);
+        *(existsCounter)++;
         return id;
     }
     else if(sqlite3_data_count(linkQuery) == 0)
