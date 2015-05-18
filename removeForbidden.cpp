@@ -10,12 +10,25 @@ A value of "true" will enable logging, false will disable it
 You can also specify a path to the log file with the following switch:
 -log <fileName>
 */ 
+//TODO: adjdb args, update readme
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cstring>
-//TODO: args from readme
-//arg1 is the 
+#include <sqlite3.h> //requries libsqlite3-dev installed
+
+//prototypes
+std::string parseLink(std::string line);
+std::string parseTitle(std::string line);
+bool isTitle(std::string line);
+bool checkForbidden(std::string line, std::string *namespaces, int namespaceCount);
+//return id if exists, enter to table and return id if not
+int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line);
+//do nothing if exists, else enter to table
+int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int currentId, int toId);
+//method to take int* in data, return times it was called in that var
+static int callbacktrack(void *data, int argc, char **argv, char**columnNames);
+
 int main(int argc, char* argv[])
 {
     //default values
@@ -26,6 +39,7 @@ int main(int argc, char* argv[])
     std::string forbiddenFile = "forbiddenPages.txt"; 
     forbiddenFile = "hddWikipedia/forbiddenPages.txt";
     std::string namespaceFile = "namespaces.txt";
+    std::string dbFile = "hddWikipedia/adj.db";
     bool log = true;
 
     //deal with command line args
@@ -54,12 +68,34 @@ int main(int argc, char* argv[])
             
         }
     }
+    //declare file streams
     std::ifstream reader;
     std::ofstream writer;
     std::ofstream forbiddenWriter;
     forbiddenWriter.open(forbiddenFile);
+    //declare sql stuff
+    sqlite3 *adjDb;
+    sqlite3_stmt *insertTitle, *insertLink, *linkQuery, *titleQuery;
+    char *sErrMsg = 0;
+    int maxSize = 300; //wiki title 256 max, query is <50 bytes
+    //initialize db
+    sqlite3_open(dbFile.c_str(), &adjDb); //open db at file
+    //create tables
+    sqlite3_exec(adjDb, "CREATE TABLE IF NOT EXISTS Titles (id INTEGER PRIMARY KEY, title TEXT COLLATE NOCASE)", NULL, NULL, &sErrMsg);
+    sqlite3_exec(adjDb, "CREATE TABLE IF NOT EXISTS Links (id INTEGER PRIMARY KEY, link_from_id INTEGER, link_to_id INTEGER)", NULL, NULL, &sErrMsg);
+    //prepare statements for inserting titles and links
+    std::string titleStatement = "INSERT INTO Titles VALUES (NULL, @Title)";
+    std::string linkStatement = "INSERT INTO Links VALUES(NULL, @fromID, @toID)";
+    std::string titleQueryStr = "SELECT * FROM Titles WHERE title = @title";
+    std::string linkQueryStr = "SELECT * FROM Links WHERE link_from_id = @fromID AND link_to_id = @toID"; 
+    sqlite3_prepare_v2(adjDb, titleStatement.c_str(), maxSize, &insertTitle, NULL);
+    sqlite3_prepare_v2(adjDb, linkStatement.c_str(), maxSize, &insertLink, NULL);
+    sqlite3_prepare_v2(adjDb, titleQueryStr.c_str(), maxSize, &titleQuery, NULL);
+    sqlite3_prepare_v2(adjDb, linkQueryStr.c_str(), maxSize, &linkQuery, NULL);
+
     std::string line;
     //read in list of forbidden phrases
+    //TODO: refactor to not be shitty
     reader.open(namespaceFile);
     std::getline(reader, line);
     int namespaceCount = std::stoi(line);
@@ -71,34 +107,46 @@ int main(int argc, char* argv[])
         //std::cout << "line: " << line << "\n";
         namespaces[i] = line;
     }
+    //end area to be refactored
+
+
     reader.close();
     //output line if string isn't there, otherwise stop analyzing it and move on
     reader.open(parsedInputFile);
     //writer.open("hddWikipedia/wikiFullyParsed.txt");
     writer.open(parsedOutputFile);
+    
+    //begin sql transaction
+    sqlite3_exec(adjDb, "BEGIN TRANSACTION", NULL, NULL, &sErrMsg);
+    //prepare both insert queries that will be used
+    //statement 
     while(std::getline(reader, line))
     {
-        bool write = true;
-        //need to check for colon and others separately, because article name may have colon
-        //std::cout << line << "\n";
-        if(line.find(":") != std::string::npos) //if there's a colon, see if any of the non-articles are present
-        {
-            //std::cout << "found a colon in line: " << line << "\n";
-            for(int i = 0; i < namespaceCount; i++)
-            {
-                //std::cout << "searching for: " << namespaces[i];
-                if(line.find(namespaces[i]) != std::string::npos) //if a forbidden word is found
-                {
-                    write = false;
-                }
-            }
-        }
+        int currentId;
+        bool write = checkForbidden(line, namespaces, namespaceCount);
         if(write)
         {
+            //check if it's a title or a link
+            bool title = isTitle(line);
+            if(title)//it's a title, we're on a new adj list
+            {
+                line = parseTitle(line);
+                currentId = getTitleId(adjDb, insertTitle, titleQuery, line);
+                 
+            }
+            else if(!title)//its a link
+            {
+                line = parseLink(line);
+                //insert into db if it's not there...
+                int toId = getTitleId(adjDb, insertTitle, titleQuery, line);
+                int linkId = getLinkId(adjDb, insertLink, linkQuery, currentId, toId);
+            }
+            //write to db
+            
             //std::cout << "writing" << line << "\n";
-            writtenPages++;
+            //writtenPages++;
             //std::cout << "w\n";
-            writer << line << "\n";
+            //writer << line << "\n";
         }
         else if(!write)
         {
@@ -115,4 +163,121 @@ int main(int argc, char* argv[])
     forbiddenWriter.close();
     reader.close();
     writer.close();
+}
+
+bool checkForbidden(std::string line, std::string *namespaces, int namespaceCount)
+{
+    bool write = true;
+    //need to check for colon and others separately, because article name may have colon
+    //std::cout << line << "\n";
+    if(line.find(":") != std::string::npos) //if there's a colon, see if any of the non-articles are present
+    {
+        //std::cout << "found a colon in line: " << line << "\n";
+        for(int i = 0; i < namespaceCount; i++)
+        {
+            //std::cout << "searching for: " << namespaces[i];
+            if(line.find(namespaces[i]) != std::string::npos) //if a forbidden word is found
+            {
+                write = false;
+            }
+        }
+    }
+    return write;
+}
+
+bool isTitle(std::string line)
+{
+    // | <> [] are never in article title
+    //check if there's a [, it's a link
+    //otherwise it's a title
+    if(line.find("[") != std::string::npos) //if there's a [
+        return false;
+    else
+        return true;
+}
+
+std::string parseTitle(std::string line)
+{
+    //we want everything between <title> and </title> tags
+    //so, everything for position 6, string length will be length - 15 
+    //because <title></title> is 15 characters
+    return line.substr(6, line.length()-15);     
+}
+
+std::string parseLink(std::string line)
+{
+    //first thing is to evaluate if there's a | 
+    unsigned int horPos = line.find("|");
+    if(horPos != std::string::npos) //if there's a |
+    {
+        //part before | is the title being linked to
+        //so, from position 2 (because of [[ with length horPos - 2 
+        return line.substr(2, horPos-2);
+    }
+    else if(horPos == std::string::npos) //if there's no |
+    {
+        //return substring from position 2 with length len-4
+        return line.substr(2, line.length() -4);
+    }
+}
+
+static int callbacktrack(void *data, int argc, char **argv, char**columnNames)
+{
+    (*(int*)data)++;
+    return 0;
+}
+
+int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line) 
+{
+    //insert into db if it's not there
+    sqlite3_bind_text(titleQuery, 1, line.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_step(titleQuery);
+    if(sqlite3_data_count(titleQuery) > 0) //if there was a result
+    {
+        int id = sqlite3_column_int(titleQuery, 1);
+        sqlite3_clear_bindings(titleQuery);
+        sqlite3_reset(titleQuery);
+        return id;
+    }
+    else if(sqlite3_data_count(titleQuery) == 0)
+    {
+        sqlite3_bind_text(insertTitle, 1, line.c_str(), -1, SQLITE_TRANSIENT);
+        sqlite3_step(insertTitle);
+        sqlite3_clear_bindings(insertTitle);
+        sqlite3_reset(insertTitle);
+        //reset the initial id query
+        sqlite3_clear_bindings(titleQuery);
+        sqlite3_reset(titleQuery);
+        return sqlite3_last_insert_rowid(adjDb);
+    }
+    return 0;
+
+}
+
+int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int fromId, int toId)
+{
+    //insert into db if it's not there
+    sqlite3_bind_int(linkQuery, 1, fromId);
+    sqlite3_bind_int(linkQuery, 2, toId);
+    sqlite3_step(linkQuery);
+    if(sqlite3_data_count(linkQuery) > 0) //if there was a result
+    {
+        int id = sqlite3_column_int(linkQuery, 1);
+        sqlite3_clear_bindings(linkQuery);
+        sqlite3_reset(linkQuery);
+        return id;
+    }
+    else if(sqlite3_data_count(linkQuery) == 0)
+    {
+        sqlite3_bind_int(insertLink, 1, fromId);
+        sqlite3_bind_int(insertLink, 2, toId);
+        sqlite3_step(insertLink);
+        sqlite3_clear_bindings(insertLink);
+        sqlite3_reset(insertLink);
+        //reset id query
+        sqlite3_clear_bindings(linkQuery);
+        sqlite3_reset(linkQuery);
+        return sqlite3_last_insert_rowid(adjDb);
+    }
+    return 0;
 }
