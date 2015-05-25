@@ -46,7 +46,12 @@ int main()
     
     //test select stuff
     std::cout << "testing select \n";
-    statement = "SELECT * FROM Titles WHERE Title = 'le le le le pinis'";
+    statement = "SELECT * FROM Titles WHERE Title = @title";
+    sqlite3_stmt *query;
+    sqlite3_prepare_v2(db, statement.c_str(), maxSize, &query, NULL);
+    sqlite3_bind_text(query, 1, title.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_step(query);
+    std::cout << sqlite3_column_int(query, 1) << " was column intlllll";
     int callBackCalled = 0;
     rc = sqlite3_exec(db, statement.c_str(), callbacktrack, (void*) &callBackCalled, &error);
     std::cout << "\nvalue of callbackcalled is" << callBackCalled << "\n";

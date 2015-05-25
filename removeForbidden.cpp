@@ -11,6 +11,8 @@ You can also specify a path to the log file with the following switch:
 -log <fileName>
 */ 
 //TODO: adjdb args, update readme
+//TODO: remove unnecessary args and arg vars
+//TODO: close transaction for db
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -86,6 +88,7 @@ int main(int argc, char* argv[])
     //prepare statements for inserting titles and links
     std::string titleStatement = "INSERT INTO Titles VALUES (NULL, @Title)";
     std::string linkStatement = "INSERT INTO Links VALUES(NULL, @fromID, @toID)";
+    //std::string titleQueryStr = "SELECT * FROM Titles WHERE title = @title";
     std::string titleQueryStr = "SELECT * FROM Titles WHERE title = @title";
     std::string linkQueryStr = "SELECT * FROM Links WHERE link_from_id = @fromID AND link_to_id = @toID"; 
     sqlite3_prepare_v2(adjDb, titleStatement.c_str(), maxSize, &insertTitle, NULL);
@@ -133,6 +136,8 @@ int main(int argc, char* argv[])
             {
                 line = parseTitle(line);
                 currentId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount);
+                if(currentId == 0)
+                    std::cout << "id is 0 for title: " << line << "\n";
                 writtenTitles++; 
             }
             else if(!title)//its a link
@@ -140,7 +145,11 @@ int main(int argc, char* argv[])
                 line = parseLink(line);
                 //insert into db if it's not there...
                 int toId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount);
+                if(toId == 0)
+                    std::cout << "id is 0 for toId: " << line << "\n";
                 int linkId = getLinkId(adjDb, insertLink, linkQuery, currentId, toId, &existingLinkCount);
+                if(linkId == 0)
+                    std::cout << "id is 0 for link: " << line << "to ID: " << currentId << "\n";
                 writtenLinks++;
             }
             //write to db
@@ -241,17 +250,22 @@ int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQue
 {
     //insert into db if it's not there
     sqlite3_bind_text(titleQuery, 1, line.c_str(), -1, SQLITE_TRANSIENT);
-    sqlite3_step(titleQuery);
+    int rc = sqlite3_step(titleQuery);
+    //std::cout << "step code was: " << rc << "\n";
     if(sqlite3_data_count(titleQuery) > 0) //if there was a result
     {
-        int id = sqlite3_column_int(titleQuery, 1);
+        //std::cout << "dataCount > 0 for title: " << line << "\n";
+        int id = sqlite3_column_int(titleQuery, 0);
+        //std::cout << "column 0 datatype: " << sqlite3_column_decltype(titleQuery, 0) << "is: " << sqlite3_column_int(titleQuery, 0) << "\n";
         sqlite3_clear_bindings(titleQuery);
         sqlite3_reset(titleQuery);
         *(existsCounter)++;
+        //std::cout << "id is: " << id << "\n";
         return id;
     }
     else if(sqlite3_data_count(titleQuery) == 0)
     {
+        //std::cout << "dataCount == 0  for title: " << line << "\n";
         sqlite3_bind_text(insertTitle, 1, line.c_str(), -1, SQLITE_TRANSIENT);
         sqlite3_step(insertTitle);
         sqlite3_clear_bindings(insertTitle);
@@ -259,7 +273,9 @@ int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQue
         //reset the initial id query
         sqlite3_clear_bindings(titleQuery);
         sqlite3_reset(titleQuery);
-        return sqlite3_last_insert_rowid(adjDb);
+        int id = sqlite3_last_insert_rowid(adjDb);
+        //std::cout << "id is: " << id << "\n";
+        return id;
     }
     return 0;
 
@@ -270,10 +286,13 @@ int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery,
     //insert into db if it's not there
     sqlite3_bind_int(linkQuery, 1, fromId);
     sqlite3_bind_int(linkQuery, 2, toId);
-    sqlite3_step(linkQuery);
+    int rc = sqlite3_step(linkQuery);
+    //std::cout << "step code was: " << rc << "\n";
     if(sqlite3_data_count(linkQuery) > 0) //if there was a result
     {
-        int id = sqlite3_column_int(linkQuery, 1);
+        //std::cout << "datacount > 0 for link: " << fromId << " to " << toId << "\n";
+        int id = sqlite3_column_int(linkQuery, 0);
+        //std::cout << "column 0 datatype: " << sqlite3_column_decltype(linkQuery, 0) << "is: " << sqlite3_column_int(linkQuery, 0) << "\n";
         sqlite3_clear_bindings(linkQuery);
         sqlite3_reset(linkQuery);
         *(existsCounter)++;
