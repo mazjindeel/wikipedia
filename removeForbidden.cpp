@@ -9,6 +9,8 @@ Forbidden Pages: This utility also logs any records that are not being included 
 A value of "true" will enable logging, false will disable it
 You can also specify a path to the log file with the following switch:
 -log <fileName>
+Sqlite Database (will be removed after execution). You can specify a path to the database file, or it will default to adj.db. Additionally, if your hardware supports it, an argument of :memory will create the database entirely in main memory without writing to disk, which will greatly improve performance of this program. To specify the database path, use the following switch:
+-db <path>
 */ 
 //TODO: adjdb args, update readme
 //TODO: remove unnecessary args and arg vars
@@ -65,6 +67,11 @@ int main(int argc, char* argv[])
             else if(strcmp(argv[i], "-n") == 0)
             {
                 namespaceFile = argv[i+1];
+                i++;
+            }
+            else if(strcmp(argv[i], "-db") == 0)
+            {
+                dbFile = argv[i+1];
                 i++;
             }
             
