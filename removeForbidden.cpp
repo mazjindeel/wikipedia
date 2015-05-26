@@ -13,7 +13,6 @@ Sqlite Database (will be removed after execution). You can specify a path to the
 -db <path>
 */ 
 //TODO: adjdb args, update readme
-//TODO: remove unnecessary args and arg vars
 //TODO: close transaction for db
 #include <iostream>
 #include <fstream>
@@ -38,8 +37,8 @@ int main(int argc, char* argv[])
     //default values
     //paths for all output files
     std::string parsedInputFile = "wikiParsed.txt";
-    std::string parsedOutputFile = "wikiFullyParsed.txt"; 
-    parsedOutputFile = "hddWikipedia/wikiFullyParsed.txt"; 
+    std::string outputFile = "wikiFullyParsed.txt"; 
+    outputFile = "hddWikipedia/wikiFullyParsed.txt"; 
     std::string forbiddenFile = "forbiddenPages.txt"; 
     forbiddenFile = "hddWikipedia/forbiddenPages.txt";
     std::string namespaceFile = "namespaces.txt";
@@ -50,7 +49,7 @@ int main(int argc, char* argv[])
     if(argc > 2) //if there was an input/output file specified at least
     {
         parsedInputFile = argv[1];
-        parsedOutputFile = argv[2];
+        outputFile = argv[2];
         for(int i = 2; i < argc; i++) //iterate through remaining arguments
         {
             if(strcmp(argv[i], "-l") == 0)
@@ -125,7 +124,7 @@ int main(int argc, char* argv[])
     //output line if string isn't there, otherwise stop analyzing it and move on
     reader.open(parsedInputFile);
     //writer.open("hddWikipedia/wikiFullyParsed.txt");
-    writer.open(parsedOutputFile);
+    writer.open(outputFile);
     
     //begin sql transaction
     sqlite3_exec(adjDb, "BEGIN TRANSACTION", NULL, NULL, &sErrMsg);
