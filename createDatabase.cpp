@@ -6,7 +6,7 @@ For example, a basic usage of this utility with no optional switches applied wou
 ./createDatabase parsedInputFile.txt 
 Namespaces: If you wish to override the default namespaces.txt file, it is recommended that you merely add your namespaces to that file. Make sure to update the namespace counter at the top. The provided file removes most main namespaces, as of May 2015. However, if you want to overwrite the file, provide the switch 
 -n fileNameSpaces.txt  
-Forbidden Pages: This utility also logs any records that are not being included in the final output in a separate file. On slower filesystems or systems, it may be in your best interest to disable this logging feature. To do this, use the following:
+Forbidden Pages: This utility also logs any records that are not being included in the final output in a separate file. Logging is enabled by default. On slower filesystems or systems, it may be in your best interest to disable this logging feature. To do this, use the following:
 -l true/false 
 A value of "true" will enable logging, "false" will disable it
 
@@ -16,7 +16,6 @@ You can also specify a path to the log file with the following switch:
 An Sqlite Database will be created by this utility. You can specify a path to the database file, or it will default to adj.db. Additionally, if your hardware supports it, an argument of :memory will create the database entirely in main memory without writing to disk, which will greatly improve performance of this program. To specify the database path, use the following switch:
 -db database.db 
 */ 
-//TODO: update readme
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -177,11 +176,6 @@ int main(int argc, char* argv[])
     //end sqlite transaction
     sqlite3_exec(adjDb, "END TRANSACTION", NULL, NULL, &sErrMsg);
 
-    //take count of from_id's for every to_id (first degree links to page)
-    //CREATE TABLE IF NOT EXISTS Counts (id INTEGER PRIMARY KEY, page_id INTEGER, count INTEGER);
-    //insert into Counts(count, page_id) select count(link_from_id) as fromCount, link_to_id FROM Links GROUP BY link_to_id ORDER BY fromCount;
-
-    //and put counts in a table
 
     std::cout << "\nforbid: " << forbiddenPages << "\n";
     std::cout << "wrote: " << writtenPages << "\n";
