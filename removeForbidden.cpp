@@ -123,8 +123,6 @@ int main(int argc, char* argv[])
     reader.close();
     //output line if string isn't there, otherwise stop analyzing it and move on
     reader.open(parsedInputFile);
-    //writer.open("hddWikipedia/wikiFullyParsed.txt");
-    writer.open(outputFile);
     
     //begin sql transaction
     sqlite3_exec(adjDb, "BEGIN TRANSACTION", NULL, NULL, &sErrMsg);
@@ -185,6 +183,11 @@ int main(int argc, char* argv[])
     std::cout << "total: " << forbiddenPages + writtenPages << "\n";
     forbiddenWriter.close();
     reader.close();
+    
+    //now we actually process the data
+    //for each page
+        //get list of adj pages
+    writer.open(outputFile);
     writer.close();
 }
 
