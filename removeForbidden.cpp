@@ -29,8 +29,6 @@ bool checkForbidden(std::string line, std::string *namespaces, int namespaceCoun
 int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter);
 //do nothing if exists, else enter to table
 int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int currentId, int toId, int *existsCounter);
-//method to take int* in data, return times it was called in that var
-static int callbacktrack(void *data, int argc, char **argv, char**columnNames);
 
 int main(int argc, char* argv[])
 {
@@ -241,26 +239,17 @@ std::string parseLink(std::string line)
         //so, from position 2 (because of [[ with length horPos - 2 
         return line.substr(2, horPos-2);
     }
-    else if(horPos == -1) //if there's no |
-    {
-        //std::cout << "no |\n";
-        //return substring from position 2 with length len-4
-        return line.substr(2, line.length() - 4);
-    }
-}
-
-static int callbacktrack(void *data, int argc, char **argv, char**columnNames)
-{
-    (*(int*)data)++;
-    return 0;
+    //if there's no |
+    //std::cout << "no |\n";
+    //return substring from position 2 with length len-4
+    return line.substr(2, line.length() - 4);
 }
 
 int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter) 
 {
     //insert into db if it's not there
     sqlite3_bind_text(titleQuery, 1, line.c_str(), -1, SQLITE_TRANSIENT);
-    int rc = sqlite3_step(titleQuery);
-    //std::cout << "step code was: " << rc << "\n";
+    sqlite3_step(titleQuery);
     if(sqlite3_data_count(titleQuery) > 0) //if there was a result
     {
         //std::cout << "dataCount > 0 for title: " << line << "\n";
@@ -268,7 +257,7 @@ int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQue
         //std::cout << "column 0 datatype: " << sqlite3_column_decltype(titleQuery, 0) << "is: " << sqlite3_column_int(titleQuery, 0) << "\n";
         sqlite3_clear_bindings(titleQuery);
         sqlite3_reset(titleQuery);
-        *(existsCounter)++;
+        (*existsCounter)++;
         //std::cout << "id is: " << id << "\n";
         return id;
     }
@@ -295,7 +284,7 @@ int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery,
     //insert into db if it's not there
     sqlite3_bind_int(linkQuery, 1, fromId);
     sqlite3_bind_int(linkQuery, 2, toId);
-    int rc = sqlite3_step(linkQuery);
+    sqlite3_step(linkQuery);
     //std::cout << "step code was: " << rc << "\n";
     if(sqlite3_data_count(linkQuery) > 0) //if there was a result
     {
@@ -304,7 +293,7 @@ int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery,
         //std::cout << "column 0 datatype: " << sqlite3_column_decltype(linkQuery, 0) << "is: " << sqlite3_column_int(linkQuery, 0) << "\n";
         sqlite3_clear_bindings(linkQuery);
         sqlite3_reset(linkQuery);
-        *(existsCounter)++;
+        (*existsCounter)++;
         return id;
     }
     else if(sqlite3_data_count(linkQuery) == 0)
