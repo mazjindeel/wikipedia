@@ -1,19 +1,22 @@
 /* Author: Mazin Jindeel
 ** Date: 5/15
 ** Functionality: This utility is designed to remove namespaces from parsed Wikipedia data. 
-** Usage: To run this utility, you must provide a minimum of two arguments: the original, parsed file (with namespaces) as well as the output path. However, there are also some switches you can use to configure the program. 
+** Usage: To run this utility, you must provide a minimum of one argument: the original, parsed file (with namespaces). However, there are also some switches you can use to configure the program. 
+For example, a basic usage of this utility with no optional switches applied would look like this: 
+./createDatabase parsedInputFile.txt 
 Namespaces: If you wish to override the default namespaces.txt file, it is recommended that you merely add your namespaces to that file. Make sure to update the namespace counter at the top. The provided file removes most main namespaces, as of May 2015. However, if you want to overwrite the file, provide the switch 
--n <fileNameSpaces>.  
+-n fileNameSpaces.txt  
 Forbidden Pages: This utility also logs any records that are not being included in the final output in a separate file. On slower filesystems or systems, it may be in your best interest to disable this logging feature. To do this, use the following:
--l <true/false>. 
-A value of "true" will enable logging, false will disable it
+-l true/false 
+A value of "true" will enable logging, "false" will disable it
+
 You can also specify a path to the log file with the following switch:
--log <fileName>
-Sqlite Database (will be removed after execution). You can specify a path to the database file, or it will default to adj.db. Additionally, if your hardware supports it, an argument of :memory will create the database entirely in main memory without writing to disk, which will greatly improve performance of this program. To specify the database path, use the following switch:
--db <path>
+-log logfile.txt
+
+An Sqlite Database will be created by this utility. You can specify a path to the database file, or it will default to adj.db. Additionally, if your hardware supports it, an argument of :memory will create the database entirely in main memory without writing to disk, which will greatly improve performance of this program. To specify the database path, use the following switch:
+-db database.db 
 */ 
-//TODO: adjdb args, update readme
-//TODO: close transaction for db
+//TODO: update readme
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -47,8 +50,7 @@ int main(int argc, char* argv[])
     if(argc > 2) //if there was an input/output file specified at least
     {
         parsedInputFile = argv[1];
-        outputFile = argv[2];
-        for(int i = 2; i < argc; i++) //iterate through remaining arguments
+        for(int i = 1; i < argc; i++) //iterate through remaining arguments
         {
             if(strcmp(argv[i], "-l") == 0)
             {
@@ -102,7 +104,6 @@ int main(int argc, char* argv[])
 
     std::string line;
     //read in list of forbidden phrases
-    //TODO: refactor to not be shitty
     reader.open(namespaceFile);
     std::getline(reader, line);
     int namespaceCount = std::stoi(line);
@@ -115,8 +116,6 @@ int main(int argc, char* argv[])
         //std::cout << "line: " << line << "\n";
         namespaces[i] = line;
     }
-    //end area to be refactored
-
 
     reader.close();
     //output line if string isn't there, otherwise stop analyzing it and move on
@@ -170,14 +169,26 @@ int main(int argc, char* argv[])
         }
     }
 
+    //finalize prepared statements
+    sqlite3_finalize(insertTitle);
+    sqlite3_finalize(insertLink);
+    sqlite3_finalize(titleQuery);
+    sqlite3_finalize(linkQuery);
     //end sqlite transaction
     sqlite3_exec(adjDb, "END TRANSACTION", NULL, NULL, &sErrMsg);
+
+    //take count of from_id's for every to_id (first degree links to page)
+    //CREATE TABLE IF NOT EXISTS Counts (id INTEGER PRIMARY KEY, page_id INTEGER, count INTEGER);
+    //insert into Counts(count, page_id) select count(link_from_id) as fromCount, link_to_id FROM Links GROUP BY link_to_id ORDER BY fromCount;
+
+    //and put counts in a table
 
     std::cout << "\nforbid: " << forbiddenPages << "\n";
     std::cout << "wrote: " << writtenPages << "\n";
     std::cout << "titles: " << writtenTitles << "\n";
     std::cout << "links: " << writtenLinks << "\n";
-    std::cout << "pages existing: " << existingTitleCount << " links existing: " << existingLinkCount << "\n";
+    std::cout << "pages existing: " << existingTitleCount << "\n";
+    std::cout << " links existing: " << existingLinkCount << "\n";
     std::cout << "total: " << forbiddenPages + writtenPages << "\n";
     forbiddenWriter.close();
     reader.close();

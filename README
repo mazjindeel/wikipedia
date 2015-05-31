@@ -21,15 +21,14 @@ Note: each step may take a while, depending on your system's limitations.
     The second argument is wherever you want the output to be located
     Note: dataset should shrink to ~10GB, so have at least that much space free. 
 
-4: remove namespace links by making and running removeForbidden
+4: remove namespace links  and create the database to be used by making and running createDatabase
     Many "links" are not actually linking to other pages, but separate namespaces
-    We need to remove these faux "links", since they don't link to actual pages
+    We need to remove these faux "links", since they don't link to actual pages and will degrade performance if not removed
     steps to make and run removeForbidden:
-        1. type 'make removeForbidden' to make the utility
-        2. make sure the file 'namespaces.txt' is in the same directory as the removeForbidden (by default, this should be the case)
-        3. type './removeForbidden arg1 arg2' to run the utility
+        A. type 'make createForbidden' to make the utility
+        B. type './removeForbidden arg1 ' to run the utility
             arg1 is the path of your input file
-            arg2 is the path of the output file
-            read the documentation in removeForbidden.cpp to view all the arguments you can provide and what their functionality is. 
+        C. by default, an sqlite database called adj.db will be created in the working directory
+        Read the documentation in createDatabase.cpp to view all the available switches and how to use them.  
 
-    Note: you will need an equivalent amount of data as the file generated in step 3 to run this utility with default settings. 
+    Note: make sure you have enough space free on your disk to run this utility -- in the case that there are no namespaces, or if you choose to log forbidden pages, the total output (adj.db and the logfile) will be the size of the file created in step 3, so make sure you have at least that much space free. 

@@ -2,13 +2,13 @@ CC=g++
 CXXFLAGS=-c -Wall -std=c++11
 LIBS=-l sqlite3
 
-all: removeForbidden
+all: createDatabase
 
-removeForbidden: removeForbidden.o
-	$(CC) removeForbidden.o -o removeForbidden $(LIBS)
+createDatabase: createDatabase.o
+	$(CC) createDatabase.o -o createDatabase $(LIBS)
 
-removeForbidden.o: removeForbidden.cpp
-	$(CC) $(CXXFLAGS) removeForbidden.cpp
+createDatabase.o: createDatabase.cpp
+	$(CC) $(CXXFLAGS) createDatabase.cpp
 
 clean:
-	rm *.o removeForbidden
+	rm *.o createDatabase
