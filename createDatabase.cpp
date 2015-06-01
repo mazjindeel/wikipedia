@@ -163,7 +163,7 @@ int main(int argc, char* argv[])
         {
             //std::cout << "forbidding" << line << "\n";
             if(log)
-                forbiddenWriter << line;
+                forbiddenWriter << line << "\n";
             forbiddenPages++;
         }
     }
