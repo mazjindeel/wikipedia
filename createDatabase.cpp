@@ -21,6 +21,7 @@ An Sqlite Database will be created by this utility. You can specify a path to th
 #include <string>
 #include <cstring>
 #include <sqlite3.h> //requries libsqlite3-dev installed
+#include <unordered_map> //hash map
 
 //prototypes
 std::string parseLink(std::string line);
@@ -28,7 +29,7 @@ std::string parseTitle(std::string line);
 bool isTitle(std::string line);
 bool checkForbidden(std::string line, std::string *namespaces, int namespaceCount);
 //return id if exists, enter to table and return id if not
-int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter);
+int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter, std::unordered_map<std::string, int> * titleMap);
 //do nothing if exists, else enter to table
 int getLinkId(sqlite3 *adjDb, sqlite3_stmt *insertLink, sqlite3_stmt *linkQuery, int currentId, int toId, int *existsCounter);
 
@@ -90,6 +91,8 @@ int main(int argc, char* argv[])
     //create tables
     sqlite3_exec(adjDb, "CREATE TABLE IF NOT EXISTS Titles (id INTEGER PRIMARY KEY, title TEXT COLLATE NOCASE)", NULL, NULL, &sErrMsg);
     sqlite3_exec(adjDb, "CREATE TABLE IF NOT EXISTS Links (id INTEGER PRIMARY KEY, link_from_id INTEGER, link_to_id INTEGER)", NULL, NULL, &sErrMsg);
+    sqlite3_exec(adjDb, "PRAGMA synchronous = OFF", NULL, NULL, &sErrMsg);
+    sqlite3_exec(adjDb, "PRAGMA journal_mode = MEMORY", NULL, NULL, &sErrMsg);
     //prepare statements for inserting titles and links
     std::string titleStatement = "INSERT INTO Titles VALUES (NULL, @Title)";
     std::string linkStatement = "INSERT INTO Links VALUES(NULL, @fromID, @toID)";
@@ -100,6 +103,9 @@ int main(int argc, char* argv[])
     sqlite3_prepare_v2(adjDb, linkStatement.c_str(), maxSize, &insertLink, NULL);
     sqlite3_prepare_v2(adjDb, titleQueryStr.c_str(), maxSize, &titleQuery, NULL);
     sqlite3_prepare_v2(adjDb, linkQueryStr.c_str(), maxSize, &linkQuery, NULL);
+
+    //declare hashmap to "cache" titles
+    std::unordered_map<std::string, int>  titleMap;
 
     std::string line;
     //read in list of forbidden phrases
@@ -135,7 +141,7 @@ int main(int argc, char* argv[])
             if(title)//it's a title, we're on a new adj list
             {
                 line = parseTitle(line);
-                currentId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount);
+                currentId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount, &titleMap);
                 if(currentId == 0)
                     std::cout << "id is 0 for title: " << line << "\n";
                 writtenTitles++; 
@@ -144,7 +150,7 @@ int main(int argc, char* argv[])
             {
                 line = parseLink(line);
                 //insert into db if it's not there...
-                int toId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount);
+                int toId = getTitleId(adjDb, insertTitle, titleQuery, line, &existingTitleCount, &titleMap);
                 if(toId == 0)
                     std::cout << "id is 0 for toId: " << line << "\n";
                 int linkId = getLinkId(adjDb, insertLink, linkQuery, currentId, toId, &existingLinkCount);
@@ -250,15 +256,23 @@ std::string parseLink(std::string line)
     return line.substr(2, line.length() - 4);
 }
 
-int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter) 
+int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQuery, std::string line, int *existsCounter, std::unordered_map<std::string, int> * titleMap)
 {
+    //first, check hashmap to make sure its not already there
+    int id = (*titleMap)[line];
+    //std::cout << "hashMap id was: " << id << "\n";
+    if(id > 0) //if it was in the hashmap, return
+    {
+        //std::cout << "hashMap hit for title: " << line << " id is: " << id << "\n";
+        return id;
+    }
     //insert into db if it's not there
-    sqlite3_bind_text(titleQuery, 1, line.c_str(), -1, SQLITE_TRANSIENT);
+    /*sqlite3_bind_text(titleQuery, 1, line.c_str(), -1, SQLITE_TRANSIENT);
     sqlite3_step(titleQuery);
     if(sqlite3_data_count(titleQuery) > 0) //if there was a result
     {
         //std::cout << "dataCount > 0 for title: " << line << "\n";
-        int id = sqlite3_column_int(titleQuery, 0);
+        id = sqlite3_column_int(titleQuery, 0);
         //std::cout << "column 0 datatype: " << sqlite3_column_decltype(titleQuery, 0) << "is: " << sqlite3_column_int(titleQuery, 0) << "\n";
         sqlite3_clear_bindings(titleQuery);
         sqlite3_reset(titleQuery);
@@ -266,7 +280,9 @@ int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQue
         //std::cout << "id is: " << id << "\n";
         return id;
     }
-    else if(sqlite3_data_count(titleQuery) == 0)
+    */
+    //used to be else if
+    if(sqlite3_data_count(titleQuery) == 0)
     {
         //std::cout << "dataCount == 0  for title: " << line << "\n";
         sqlite3_bind_text(insertTitle, 1, line.c_str(), -1, SQLITE_TRANSIENT);
@@ -277,6 +293,8 @@ int getTitleId(sqlite3 *adjDb, sqlite3_stmt *insertTitle, sqlite3_stmt *titleQue
         sqlite3_clear_bindings(titleQuery);
         sqlite3_reset(titleQuery);
         int id = sqlite3_last_insert_rowid(adjDb);
+        (*titleMap)[line] = id;
+        //std::cout << "added title: " << line << " with id: " << id << "to map\n";
         //std::cout << "id is: " << id << "\n";
         return id;
     }
