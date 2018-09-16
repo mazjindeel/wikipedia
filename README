@@ -18,3 +18,9 @@ Note: These steps may take a while, as the data is quite large.
     * `./ parseScript.sh enwiki-20180820-pages-articles.xml graph_input.txt`
     * output should shrink to ~10GB, so have at least that much space free. 
 	* Links to namespaces are removed, because they are not considered pages
+
+4. Analyze the data
+	* This requires a great deal of RAM (over 16gb) or a ton of swap space.
+	* Install the dependencies (we only need networkx), so pip3 install networkx
+	* Run the command `./analysis.py graph_input.txt in.txt out.txt`
+	* See files in.txt and out.txt for the output of the analysis.
