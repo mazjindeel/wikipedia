@@ -19,8 +19,8 @@ We examine the wikipedia archive to see which pages are the most linked to by ot
 9. Canada, 123521
 10. United Kingdom, 116583
 
-* Find the top 1000 in [results/linkedto_top_thousand](results/linkedto_top_thousand).
-* Find the top 1000000 in [results/linkedto_top_million](results/linkedto_top_million).
+* Find the top 1000 in [results/linkedto_top_thousand.txt](results/linkedto_top_thousand.txt).
+* Find the top 1000000 in [results/linkedto_top_million.txt](results/linkedto_top_million.txt).
 
 # Instructions:
 
