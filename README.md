@@ -1,14 +1,13 @@
-#Find the most interconnected wikipedia pages
-###Author: Mazin Jindeel
-###Date: 10/18
+# Find the most interconnected wikipedia pages
+### Author: Mazin Jindeel
+### Date: 10/18
 
-#What are the most linked to Wikipedia pages?
-We examine the wikipedia archive to see which pages are the most linked to by other wikipedia pages. We also generate a list of pages with the most outgoi
+# What are the most linked to Wikipedia pages?
+We examine the wikipedia archive to see which pages are the most linked to by other wikipedia pages. At a high level, this is done by sticking wikipedia pages into a digraph and seeing which nodes have the most incoming edges. 
 
+# Results
 
-#Results
-
-##Most Linked To Pages
+## Most Linked To Pages
 1. United States, 403383
 2. Animal, 179831
 3. France, 149506
@@ -23,7 +22,7 @@ We examine the wikipedia archive to see which pages are the most linked to by ot
 * Find the top 1000 in [results/linkedto_top_thousand](results/linkedto_top_thousand).
 * Find the top 1000000 in [results/linkedto_top_million](results/linkedto_top_million).
 
-#Instructions:
+# Instructions:
 
 * These steps may take a while, as the data is quite large. 
 * Ideally you will have around 100GB of hard drive space free. The analysis will
@@ -49,7 +48,7 @@ We examine the wikipedia archive to see which pages are the most linked to by ot
 	* Run the command `./analysis.py graph_input.txt results/linkedto.txt`
 	* See files linkedto.txt and the output of the analysis.
 
-#Future work / TODO
+# Future work / TODO
 ## Performance: 
 * This thing is particularly memory hungry - some care could be taken to improve the performance. This project peaked around 130gb of RAM. Thankfully I have access to a 500GB RAM machine - doing this with swap files would be painful!
 * There are still some namespaces remaining in the results. I removed the obvious ones, but some remain as a result of typos or simply that the namespace is too small for us to care. 
