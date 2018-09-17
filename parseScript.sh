@@ -23,7 +23,7 @@ output="$2"
 #then remove all the renamings ([a|b] is just a link to a
 #then output to the output file
 
-grep -Po '<title>(.*)</title>|\[\[.*?\]\]' $wikipedia_uncompressed | grep -Ev '\[\[.*(34|User|WP|Project|File|Image|MediaWiki|Template|Help|Category|Portal|Book|Draft|Education|Program|TimedText|Module|Topic|User|talk|Talk|WT|Special|Media|Project|Talk|Image|talk|File|talk|Wikipedia|Talk|m|mw|wikt|CAT|H|MOS|P|T|MP):.*\]\]' | sed -E 's/\|[^]]*//g' > $output
+grep -Po '<title>(.*)</title>|\[\[.*?\]\]' $wikipedia_uncompressed | grep -Ev '\[\[.*(34|User|WP|Project|File|Image|MediaWiki|Template|Help|Category|Portal|Book|Draft|Education|Program|TimedText|Module|Topic|User|talk|Talk|WT|Special|Media|Project|Talk|Image|talk|File|talk|Wikipedia|Talk|m|mw|wikt|CAT|H|MOS|P|T|MP|Wikipedia|Template|Module|toollabs|bugzilla|tools|template|wikipedia):.*\]\]' | sed -E 's/\|[^]]*//g' > $output
 
 
 
