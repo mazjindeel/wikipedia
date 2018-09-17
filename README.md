@@ -1,6 +1,5 @@
 # Find the most interconnected wikipedia pages
-### Author: Mazin Jindeel
-### Date: 10/18
+### Maz Jindeel - 10/18
 
 # What are the most linked to Wikipedia pages?
 We examine the wikipedia archive to see which pages are the most linked to by other wikipedia pages. At a high level, this is done by sticking wikipedia pages into a digraph and seeing which nodes have the most incoming edges. 
