@@ -1,1000 +1,1000 @@
-('United States', 403383)
-('Animal', 179831)
-('France', 149506)
-('Arthropod', 134052)
-('India', 131925)
-('World War II', 128570)
-('Insect', 127142)
-('Germany', 126540)
-('Canada', 123521)
-('United Kingdom', 116583)
-('List of countries', 116430)
-('England', 115632)
-('New York City', 109530)
-('London', 101210)
-('Australia', 100113)
-('The New York Times', 96403)
-('Italy', 93955)
-('Japan', 93130)
-('Iran', 90650)
-('Lepidoptera', 83451)
-('California', 80135)
-('moth', 77104)
-('Poland', 76644)
-('Association football', 74686)
-('Russia', 73308)
-('National Register of Historic Places', 72736)
-('association football', 70011)
-('Countries of the world', 69294)
-('Spain', 68448)
-('Allmusic', 66024)
-('China', 65752)
-('English language', 64733)
-('Provinces of Iran', 62852)
-('Counties of Iran', 62758)
-('World War I', 62644)
-('village', 62453)
-('Bakhsh', 62441)
-('Rural Districts of Iran', 62197)
-('Brazil', 62065)
-('Iran Standard Time', 60389)
-('Iran Daylight Time', 59862)
-('Geographic Names Information System', 59504)
-('Voivodeships of Poland', 55584)
-('Powiat', 55554)
-('Gmina', 55497)
-('Romanize', 55253)
-('Paris', 54558)
-('Netherlands', 54472)
-('Mexico', 54081)
-('Political divisions of the United States', 53811)
-('Sweden', 53806)
-('The Guardian', 51573)
-('Google Books', 49335)
-('New York (state)', 49007)
-('Los Angeles', 48919)
-('Scotland', 48656)
-('species', 47901)
-('Soviet Union', 46734)
-('census', 46711)
-('United States Census Bureau', 45891)
-('BBC', 45132)
-('Europe', 44565)
-('genus', 44499)
-('Billboard (magazine)', 44276)
-('Turkey', 44179)
-('South Africa', 43302)
-('Switzerland', 43296)
-('Norway', 43285)
-('U.S. state', 43127)
-('American football', 42959)
-('New Zealand', 42663)
-('Democratic Party (United States)', 41865)
-('Republican Party (United States)', 41578)
-('Angiosperms', 41571)
-('Texas', 41359)
-('ZIP code', 41073)
-('population density', 41016)
-('Departments of France', 40053)
-('Philippines', 39982)
-('Communes of France', 39754)
-('Federal Information Processing Standard', 39174)
-('Romania', 38878)
-('New York Times', 38637)
-('Ontario', 38530)
-('Central European Time', 38258)
-('family (biology)', 37719)
-('Chicago', 37719)
-('Google News', 37450)
-('Washington, D.C.', 37257)
-('List of sovereign states', 36978)
-('Argentina', 36769)
-('Austria', 36764)
-('2010 United States Census', 36233)
-('Pennsylvania', 36070)
-('per capita income', 35603)
-('YouTube', 35439)
-('Belgium', 35362)
-('United States Geological Survey', 35277)
-('poverty line', 34945)
-('Central European Summer Time', 34717)
-('Marriage', 34439)
-('Beetle', 34404)
-('Florida', 34039)
-('American Civil War', 34023)
-('Pakistan', 33078)
-('South Korea', 32907)
-('Midfielder', 32878)
-('{{TALKPAGENAME}}', 32857)
-('Israel', 32819)
-('AllMusic', 32721)
-('Toronto', 32653)
-('Eudicots', 32372)
-('White (U.S. Census)', 32320)
-('Greece', 32317)
-('beetle', 31839)
-('Member of Parliament', 31632)
-('Berlin', 31524)
-('Denmark', 31471)
-('Rome', 31469)
-('Ireland', 31091)
-('Los Angeles Times', 30642)
-('gastropod', 30190)
-('Finland', 30014)
-('Indonesia', 29907)
-('basketball', 29854)
-('Plantae', 29333)
-('Illinois', 29313)
-('Animalia', 29212)
-('Pop music', 29186)
-('Hispanic (U.S. Census)', 29158)
-('Defender (association football)', 29065)
-('Latino (U.S. Census)', 29005)
-('Sydney', 28725)
-('Roman Catholic', 28452)
-('Ukraine', 28425)
-('Moscow', 28369)
-('cricket', 28300)
-('States and territories of India', 28233)
-('Major League Baseball', 28169)
-('Hungary', 28048)
-('guitar', 28044)
-('Rock music', 27896)
-('Indian Standard Time', 27713)
-('Ohio', 27698)
-('Philadelphia', 27474)
-('National Football League', 27079)
-('United States Navy', 27001)
-('Portugal', 27000)
-('mollusk', 26979)
-('Malaysia', 26861)
-('Race (United States Census)', 26837)
-('Associated Press', 26661)
-('North America', 26602)
-('Polyphaga', 26407)
-('Thailand', 26184)
-('Native American (U.S. Census)', 25939)
-('ice hockey', 25892)
-('Egypt', 25861)
-('Second World War', 25818)
-('Postal Index Number', 25792)
-('Billboard Hot 100', 25775)
-('French language', 25775)
-('New Jersey', 25749)
-('Quebec', 25713)
-('New South Wales', 25628)
-('Melbourne', 25612)
-('Virginia', 25406)
-('Forward (association football)', 25207)
-('Peru', 25088)
-('African American (U.S. Census)', 24856)
-('Hong Kong', 24839)
-('Wales', 24712)
-('Massachusetts', 24539)
-('Mollusca', 24534)
-('Czech Republic', 24502)
-('Colombia', 24451)
-('British Columbia', 24365)
-('football (soccer)', 24204)
-('United Nations', 24192)
-('Asian (U.S. Census)', 24152)
-('List of districts of India', 24068)
-('United States Army', 23975)
-('San Francisco', 23968)
-('Singapore', 23953)
-('Eastern Time Zone', 23882)
-('Montreal', 23703)
-('Vienna', 23660)
-('Unincorporated area', 23644)
-('Spanish language', 23571)
-('bass guitar', 23506)
-('Harvard University', 23425)
-('wingspan', 23304)
-('college football', 23277)
-('Latin', 23230)
-('Royal Navy', 23224)
-('Cerambycidae', 23188)
-('Chordata', 23123)
-('Boston', 22893)
-('Sri Lanka', 22839)
-('Taiwan', 22679)
-('Gastropoda', 22670)
-('Tokyo', 22471)
-('sea snail', 22469)
-('German language', 22363)
-('NBC', 22222)
-('Queensland', 22145)
-('Rolling Stone', 22122)
-('Serbia', 22108)
-('Eastern European Time', 22039)
-('Bulgaria', 22030)
-('United States House of Representatives', 22027)
-('piano', 22026)
-('UK Singles Chart', 21955)
-('Bachelor of Arts', 21799)
-('Billboard 200', 21506)
-('Endemism', 21475)
-('Chile', 21409)
-('The Times', 21364)
-('Music download', 21255)
-('Republic of Ireland', 21229)
-('Eastern European Summer Time', 21022)
-('Dublin', 20928)
-('Beijing', 20878)
-('Ottoman Empire', 20714)
-('Islam', 20609)
-('The Independent', 20397)
-('CBS', 20376)
-('Album', 20241)
-('American Broadcasting Company', 20214)
-('Michigan', 20177)
-('Croatia', 19977)
-('President of the United States', 19775)
-('Africa', 19724)
-('Venezuela', 19701)
-('The Daily Telegraph', 19636)
-('North Carolina', 19632)
-('Nigeria', 19537)
-('Los Angeles, California', 19517)
-('Reuters', 19393)
-('Missouri', 19366)
-('Vietnam', 19343)
-('Catholic Church', 19276)
-('Minnesota', 19068)
-('The Washington Post', 18938)
-('Cuba', 18933)
-('BBC News', 18914)
-('Plant', 18876)
-('Stockholm', 18620)
-('Munich', 18539)
-('USA Today', 18477)
-('United States Senate', 18471)
-('Metacritic', 18423)
-('Glasgow', 18414)
-('Maryland', 18331)
-('Warsaw', 18314)
-('jazz', 18288)
-('Slovenia', 18267)
-('studio album', 18255)
-('Kenya', 18254)
-('Roman Catholic Church', 18192)
-('Georgia (U.S. state)', 18180)
-('first-class cricket', 18003)
-('Barack Obama', 17930)
-('tennis', 17849)
-('Iraq', 17847)
-('European Union', 17817)
-('Prague', 17793)
-('Athens', 17717)
-('Nazi Germany', 17709)
-('Madrid', 17688)
-('Microsoft Windows', 17654)
-('Variety (magazine)', 17652)
-('First World War', 17648)
-('Conservative Party (UK)', 17628)
-("People's Republic of China", 17615)
-('Indiana', 17580)
-('Entertainment Weekly', 17557)
-('Jazz', 17498)
-('Drum kit', 17494)
-('politician', 17462)
-('North American Central Time Zone', 17454)
-('Afghanistan', 17442)
-('Wisconsin', 17374)
-('Northern Ireland', 17300)
-('baseball', 17246)
-('Amsterdam', 17180)
-('Arizona', 17139)
-('Oregon', 17132)
-('Barcelona', 17108)
-('Manchester', 17078)
-('Columbia University', 17002)
-('Australian rules football', 16928)
-('NASA', 16919)
-('Oxford University Press', 16884)
-('Columbia Records', 16835)
-('Western Australia', 16719)
-('rugby union', 16690)
-('Alberta', 16655)
-('Christianity', 16571)
-('Spam blacklist', 16561)
-('Spam blacklist/Log', 16560)
-('Milan', 16560)
-('Louisiana', 16463)
-('Asia', 16432)
-('habitat', 16397)
-('Ecuador', 16387)
-('Slovakia', 16336)
-('Victoria (Australia)', 16144)
-('Singing', 16132)
-('English people', 16106)
-('Nepal', 16000)
-('Country music', 15994)
-('Kentucky', 15980)
-('ESPN', 15929)
-('Edinburgh', 15891)
-('United States dollar', 15860)
-('radio station', 15853)
-('Hip hop music', 15830)
-('Rio de Janeiro', 15829)
-('CNN', 15820)
-('watt', 15808)
-('Greek language', 15800)
-('Colorado', 15785)
-('Great Britain', 15780)
-('Bangladesh', 15712)
-('Vietnam War', 15669)
-('Estonia', 15662)
-('Syria', 15644)
-('Time (magazine)', 15643)
-('Vancouver', 15640)
-('Atlanta', 15640)
-('South America', 15620)
-('drama film', 15572)
-('Morocco', 15338)
-('Portland, Oregon', 15291)
-('Australian Football League', 15273)
-('British Army', 15244)
-('Tamil Nadu', 15220)
-('Mexico City', 15219)
-('IGN', 15208)
-('North American Eastern Time Zone', 15179)
-('Manhattan', 15156)
-('Twitter', 15043)
-('Mumbai', 15041)
-('Buenos Aires', 15003)
-('DVD', 14969)
-('United States Census, 2000', 14946)
-('National Hockey League', 14878)
-('Canadians', 14871)
-('Tennessee', 14824)
-('Olympic Games', 14798)
-('Hamburg', 14773)
-('Facebook', 14741)
-('midfielder', 14723)
-('CD single', 14691)
-('Seattle', 14689)
-('George W. Bush', 14634)
-('Asterids', 14610)
-('Wall Street Journal', 14582)
-('MTV', 14570)
-('Birmingham', 14566)
-('Rotten Tomatoes', 14551)
-('Copenhagen', 14541)
-('Brooklyn', 14528)
-('Labour Party (UK)', 14503)
-('Hawaii', 14502)
-('gene', 14451)
-('Budapest', 14414)
-('Goalkeeper (association football)', 14358)
-('Czechoslovakia', 14342)
-('Liverpool', 14279)
-('Russian Empire', 14263)
-('Oslo', 14262)
-('protein', 14193)
-('Caenogastropoda', 14182)
-('Puerto Rico', 14117)
-('Chicago, Illinois', 14113)
-('Brussels', 14099)
-('actor', 14092)
-('Yale University', 14085)
-('Tamil language', 14033)
-('drum kit', 14015)
-('United States of America', 13908)
-('New Orleans', 13881)
-('Alternative rock', 13880)
-('Azerbaijan', 13876)
-('FA Cup', 13818)
-('Istanbul', 13655)
-('Algeria', 13640)
-('Seoul', 13635)
-('Bolivia', 13581)
-('Christian', 13548)
-('Stanford University', 13543)
-('science fiction', 13539)
-('Pacific Ocean', 13524)
-('Order of the British Empire', 13494)
-('Actinopterygii', 13473)
-('country music', 13396)
-('West Germany', 13331)
-('Tanzania', 13315)
-('Alabama', 13270)
-('Italian language', 13222)
-('tributary', 13207)
-('Amazon.com', 13199)
-('National Park Service', 13198)
-('Kerala', 13172)
-('Brisbane', 13158)
-('United States Congress', 13087)
-('Connecticut', 13075)
-('Mayor', 13051)
-('Rosids', 13026)
-('Bosnia and Herzegovina', 12844)
-('Nashville, Tennessee', 12781)
-('Church of England', 12777)
-('Jerusalem', 12775)
-('Atlantic Ocean', 12748)
-('United States Air Force', 12720)
-('Great Depression', 12673)
-('Lebanon', 12666)
-('Chicago Tribune', 12658)
-('University of Michigan', 12650)
-('Internet Archive', 12644)
-('Middle Ages', 12635)
-('South Carolina', 12625)
-('Maharashtra', 12615)
-('composer', 12566)
-('television', 12563)
-('Alaska', 12549)
-('Saudi Arabia', 12546)
-('Federal Communications Commission', 12529)
-('The Hollywood Reporter', 12484)
-('unincorporated community', 12381)
-('Madagascar', 12368)
-('West Virginia', 12354)
-('Lithuania', 12346)
-('film', 12322)
-('Chordate', 12255)
-('album', 12245)
-('Wikidata', 12228)
-('Hypsogastropoda', 12199)
-('First-class cricket', 12193)
-('iTunes', 12172)
-('marine (ocean)', 12132)
-('Royal Air Force', 12117)
-('Utah', 12108)
-('Panama', 12099)
-('Nevada', 12078)
-('ARIA Charts', 12071)
-('Ghana', 12043)
-('New Mexico', 11999)
-('mathematics', 11991)
-('Nova Scotia', 11982)
-('comedy film', 11970)
-('Detroit', 11946)
-('UNESCO', 11935)
-('Ethiopia', 11928)
-('unincorporated area', 11920)
-('alternative rock', 11911)
-('Boston, Massachusetts', 11906)
-('2012 Summer Olympics', 11877)
-('City', 11860)
-('Washington (state)', 11836)
-('Muslim', 11817)
-('Oklahoma', 11807)
-('video game', 11804)
-('Shanghai', 11789)
-('Roman Empire', 11762)
-('South Australia', 11758)
-('Houston', 11747)
-('bird', 11742)
-('Cold War', 11689)
-('UK', 11668)
-('Native Americans in the United States', 11614)
-('municipality', 11589)
-('Korean War', 11542)
-('Iceland', 11539)
-('Microsoft', 11531)
-('Bavaria', 11520)
-('Kansas', 11519)
-('Princeton University', 11494)
-('Monocots', 11444)
-('Iowa', 11403)
-('Uganda', 11401)
-('Ottawa', 11392)
-('Helsinki', 11362)
-('Jamaica', 11325)
-('rock music', 11322)
-('Cyprus', 11294)
-('Kent', 11293)
-('Auckland', 11255)
-('PDF', 11242)
-('high school', 11194)
-('San Diego', 11182)
-('Belgrade', 11178)
-('Batting average', 11135)
-('Karnataka', 11121)
-('Saint Petersburg', 11118)
-('University of California, Berkeley', 11117)
-('Pitchfork Media', 11107)
-('record producer', 11106)
-('pitcher', 11072)
-('Costa Rica', 11066)
-('census-designated place', 11064)
-('University of Oxford', 11016)
-('Middle East', 11002)
-('Belarus', 11000)
-('Latvia', 10969)
-('pop music', 10947)
-('Broadway theatre', 10925)
-('Russian language', 10910)
-('Maine', 10872)
-('Buddhism', 10857)
-('Internet Movie Database', 10825)
-('Pacific Islander (U.S. Census)', 10824)
-('Irish people', 10765)
-('plant', 10758)
-('Academy Award', 10723)
-('Hindi', 10722)
-('National Basketball Association', 10716)
-('Washington Post', 10700)
-('music video', 10678)
-('2008 Summer Olympics', 10676)
-('Bill Clinton', 10676)
-('Albania', 10675)
-('Captain (association football)', 10666)
-('University of Cambridge', 10657)
-('Crambidae', 10626)
-('Cambridge University Press', 10607)
-('EMI', 10561)
-('railway station', 10513)
-('Hindi language', 10503)
-('Georgia (country)', 10498)
-('Köppen climate classification', 10482)
-('St. Louis, Missouri', 10469)
-('Fox Broadcasting Company', 10462)
-('Mississippi', 10456)
-('enzyme', 10421)
-('Korea', 10408)
-('Miami', 10394)
-('Venice', 10377)
-('rugby league', 10352)
-('Lancashire', 10302)
-('Pitcher', 10269)
-('Austin, Texas', 10249)
-('Arkansas', 10245)
-('Pittsburgh', 10225)
-('UK Albums Chart', 10220)
-('Atlanta, Georgia', 10218)
-('Lisbon', 10216)
-('Florence', 10210)
-('Democratic Republic of the Congo', 10209)
-('Cornell University', 10174)
-('Naples', 10166)
-('Philadelphia, Pennsylvania', 10149)
-('Cameroon', 10148)
-('Kazakhstan', 10099)
-('Central Time Zone', 10065)
-('Hollywood', 10062)
-('Belfast', 10060)
-('screen reader', 10041)
-('Baltimore', 10039)
-('Atlantic Records', 10038)
-('Uruguay', 10035)
-('NME', 10024)
-('San Francisco, California', 9984)
-('Forbes', 9943)
-('brackets', 9918)
-('FM broadcasting', 9915)
-('Earth', 9885)
-('African American', 9878)
-('Manitoba', 9860)
-('Armenia', 9847)
-('Uttar Pradesh', 9807)
-('Cairo', 9797)
-('Bass guitar', 9775)
-('silent film', 9772)
-('Striker (association football)', 9770)
-('Guatemala', 9768)
-('New York University', 9746)
-('Hindu', 9740)
-('American Revolutionary War', 9740)
-('limestone', 9723)
-('Malta', 9721)
-('Saskatchewan', 9715)
-('Public school (government funded)', 9700)
-('Extended play', 9692)
-('United Arab Emirates', 9687)
-('Carl Linnaeus', 9686)
-('Delhi', 9683)
-('Daily Mail', 9652)
-('Adelaide', 9632)
-('2016 Summer Olympics', 9625)
-('Australian Labor Party', 9617)
-('Linux', 9612)
-('Heavy metal music', 9595)
-('The Wall Street Journal', 9588)
-('Earned run average', 9553)
-('Supreme Court of the United States', 9552)
-('Record producer', 9541)
-('Bristol', 9530)
-('Adolf Hitler', 9524)
-('West Bengal', 9521)
-('Prometheus Global Media', 9521)
-('Andhra Pradesh', 9513)
-('Ronald Reagan', 9512)
-('punk rock', 9506)
-('Tasmania', 9499)
-('São Paulo', 9495)
-('University of Chicago', 9493)
-('Warner Bros. Records', 9485)
-('Manila', 9485)
-('Zimbabwe', 9483)
-('Hangul', 9471)
-('Bangkok', 9460)
-('Caribbean', 9457)
-('forest', 9455)
-('Marvel Comics', 9441)
-('Contemporary R&amp;B', 9436)
-('The Hindu', 9429)
-('volleyball', 9414)
-('United States Marine Corps', 9399)
-('The A.V. Club', 9399)
-('Channel 4', 9393)
-('Warner Bros.', 9390)
-('Antarctica', 9372)
-('Tunisia', 9371)
-('The Beatles', 9363)
-('Species', 9343)
-('Dominican Republic', 9287)
-('Telugu language', 9275)
-('comune', 9244)
-('Columbus, Ohio', 9240)
-('Turin', 9236)
-('AP Poll', 9219)
-('violin', 9195)
-('anime', 9183)
-('county seat', 9164)
-('Oxford', 9142)
-('Library of Congress', 9141)
-('Hinduism', 9141)
-('Masovian Voivodeship', 9121)
-('Phoenix, Arizona', 9115)
-('Sicily', 9081)
-('Census-designated place', 9075)
-('Dallas', 9067)
-('Indian National Congress', 9065)
-('NATO', 9063)
-('UEFA', 9057)
-('Yugoslavia', 9048)
-('Google', 9043)
-('actress', 9035)
-('Kiev', 9033)
-('Kansas City, Missouri', 9031)
-('Arabic language', 9010)
-('William Shakespeare', 9000)
-('trumpet', 8999)
-('Ancient Rome', 8993)
-('Paramount Pictures', 8987)
-('Burma', 8984)
-('Cornwall', 8978)
-('Capitol Records', 8969)
-('Cologne', 8957)
-('Regions of France', 8954)
-('Folk music', 8935)
-('Papua New Guinea', 8925)
-('Houston, Texas', 8922)
-('Single-player video game', 8916)
-('BBC Sport', 8896)
-('Chinese language', 8894)
-('Chennai', 8889)
-('ProQuest', 8885)
-('Buffalo, New York', 8882)
-('The Sydney Morning Herald', 8876)
-('Keyboard instrument', 8868)
-('journalist', 8861)
-('North Korea', 8855)
-('Gramophone record', 8849)
-('habitat loss', 8846)
-('listed building', 8836)
-('Bible', 8834)
-('Byzantine Empire', 8828)
-('German Empire', 8827)
-('RCA Records', 8826)
-('Hot Country Songs', 8826)
-('Premier League', 8824)
-('Strikeout', 8823)
-('Leeds', 8805)
-('Portuguese language', 8797)
-('Myanmar', 8792)
-('University of Pennsylvania', 8786)
-('Surrey', 8781)
-('Basketball', 8770)
-('Provinces of Turkey', 8742)
-('film director', 8730)
-('Grammy Award', 8722)
-('butterfly', 8714)
-('singer', 8711)
-('Massachusetts Institute of Technology', 8696)
-('HBO', 8692)
-('Internet', 8691)
-('National Collegiate Athletic Association', 8687)
-('Fair use', 8683)
-('Home run', 8660)
-('Luxembourg', 8620)
-('Independent (politician)', 8608)
-('Cardiff', 8597)
-('Swimming (sport)', 8585)
-('Memphis, Tennessee', 8574)
-('CEO', 8573)
-('Neogastropoda', 8552)
-('Geneva', 8550)
-('New York Yankees', 8538)
-('Bucharest', 8534)
-('French Revolution', 8533)
-('Union Army', 8526)
-('Discogs', 8509)
-('Jordan', 8506)
-('Apple Inc.', 8502)
-('Hardcover', 8495)
-('Richmond, Virginia', 8494)
-('Lok Sabha', 8486)
-('2004 Summer Olympics', 8485)
-('iTunes Store', 8485)
-('Bachelor of Science', 8466)
-('UEFA Champions League', 8463)
-('indie rock', 8463)
-('Master of Arts', 8462)
-('Austria-Hungary', 8457)
-('Yahoo!', 8453)
-('New Delhi', 8448)
-('American Hockey League', 8441)
-('songwriter', 8429)
-('Epic Records', 8428)
-('East Germany', 8426)
-('Louisville, Kentucky', 8412)
-('Montana', 8396)
-('Baltimore, Maryland', 8394)
-('Country', 8394)
-('Manchester United F.C.', 8374)
-('RPM (magazine)', 8362)
-('White House', 8358)
-('Parliament of the United Kingdom', 8357)
-('hard rock', 8356)
-('Paperback', 8348)
-('singing', 8341)
-('New Hampshire', 8336)
-('Sudan', 8329)
-('Mississippi River', 8327)
-('University of Southern California', 8313)
-('Australian Broadcasting Corporation', 8309)
-('Cape Town', 8308)
-('Angola', 8289)
-('flowering plant', 8285)
-('single (music)', 8267)
-('Nebraska', 8264)
-('Hot R&amp;B/Hip-Hop Songs', 8254)
-('Oricon', 8253)
-('Jewish', 8247)
-('the Football League', 8246)
-('Kolkata', 8242)
-('double bass', 8240)
-('List A cricket', 8228)
-('New England', 8225)
-('British Empire', 8220)
-('Athletics (sport)', 8218)
-('Japanese language', 8218)
-('Anglican', 8216)
-('river', 8214)
-('Indie rock', 8213)
-('population', 8207)
-('Single (music)', 8199)
-('Judaism', 8191)
-('Cambodia', 8184)
-('poet', 8182)
-('Sanskrit', 8176)
-('electric guitar', 8166)
-('Johannesburg', 8165)
-('Essex', 8163)
-('R&amp;B', 8159)
-('opera', 8147)
-('Sheffield', 8146)
-('Republic of Macedonia', 8135)
-('cancer', 8131)
-('Doctor Who', 8129)
-('Stuttgart', 8121)
-('World Register of Marine Species', 8114)
-('The New Yorker', 8113)
-('FIFA', 8104)
-('Confederate States of America', 8099)
-('Fungi', 8097)
-('Win–loss record (pitching)', 8086)
-('Devon', 8062)
-('USSR', 8049)
-('The Huffington Post', 8044)
-('soccer', 8032)
-('civil parish', 7995)
-('singer-songwriter', 7964)
-('compilation album', 7950)
-('New Guinea', 7947)
-('San Diego, California', 7943)
-('sandstone', 7934)
-('Bollywood', 7932)
-('Libya', 7923)
-('DC Comics', 7918)
-('Liverpool F.C.', 7912)
-('Minneapolis', 7900)
-('Tehran', 7897)
-('Calgary', 7893)
-('Haiti', 7890)
-('Arsenal F.C.', 7883)
-('NPR', 7846)
-('manga', 7845)
-('Orlando, Florida', 7826)
-('Actor', 7822)
-('Catholic', 7821)
-('Elizabeth II', 7794)
-('Dubai', 7791)
-('Abraham Lincoln', 7783)
-('Doctor of Philosophy', 7767)
-('Germans', 7755)
-('lake', 7736)
-('Zagreb', 7734)
-('Yemen', 7719)
-('Indian Ocean', 7699)
-('Paraguay', 7695)
-('Arthropoda', 7690)
-('Constantinople', 7687)
-('Mediterranean Sea', 7677)
-('Poznań', 7676)
-('vocals', 7669)
-('Soul music', 7665)
-('Yorkshire', 7660)
-('Vermont', 7653)
-('Catalonia', 7643)
-('author', 7633)
-('Frankfurt', 7628)
-('PopMatters', 7628)
-('Recording Industry Association of America', 7611)
-('Hampshire', 7601)
-('Idaho', 7590)
-('Ford Motor Company', 7586)
-('1080i', 7584)
-('Winnipeg', 7583)
-('Kraków', 7578)
-('Michael Jackson', 7576)
-('Districts of Turkey', 7567)
-('Bob Dylan', 7567)
-('Painting', 7562)
-('Autonomous communities of Spain', 7548)
-('Oxford University', 7534)
-('Official Charts Company', 7531)
-('Noctuidae', 7530)
-('Edmonton', 7520)
-('Kuala Lumpur', 7513)
-('ITV (TV network)', 7501)
-('PBS', 7472)
-('Dutch language', 7469)
-('The Age', 7458)
-('newspaper', 7436)
-('Arabic', 7435)
-('Bangalore', 7434)
-('Leipzig', 7433)
-('2000 Summer Olympics', 7433)
-('Southeast Asia', 7411)
-('Boston Red Sox', 7408)
-('Medal of Honor', 7407)
-('philosophy', 7406)
-('architect', 7405)
-('Jesus', 7404)
-('Americans', 7404)
-('Android (operating system)', 7383)
-('Universal Music Group', 7374)
-('Midfielder (association football)', 7370)
-('side platform', 7366)
-('Provinces of Spain', 7366)
-('Erebidae', 7352)
-('Namibia', 7347)
-('House of Commons of the United Kingdom', 7341)
-('Cincinnati', 7341)
-('Federal Information Processing Standards', 7340)
-('Seattle, Washington', 7338)
-('Dallas, Texas', 7332)
-('Latin America', 7330)
-('Test cricket', 7328)
-('CricketArchive', 7326)
-('Cleveland, Ohio', 7316)
-('Charleston, South Carolina', 7314)
-('Geometridae', 7314)
-('Provinces and territories of Canada', 7313)
-('Formula One', 7308)
-('UTM parameters', 7301)
-('Jakarta', 7288)
-('Donald Trump', 7280)
-('John F. Kennedy', 7271)
-('San Francisco Chronicle', 7266)
-('screenwriter', 7260)
-('Heterobranchia', 7256)
-('Detroit, Michigan', 7246)
-('Gujarat', 7245)
-('Elvis Presley', 7243)
-('Punk rock', 7228)
-('GameSpot', 7225)
-('Defender (football)', 7225)
-('Australian Recording Industry Association', 7215)
-('batting average', 7209)
-('Socialist Federal Republic of Yugoslavia', 7199)
-('Postal code', 7197)
-('Tortricidae', 7190)
-('Pittsburgh, Pennsylvania', 7182)
-('George Washington', 7169)
-('Persian language', 7148)
-('Nicaragua', 7145)
-('Compact Disc', 7137)
-('Somalia', 7132)
-('Fiji', 7128)
-('endemism', 7128)
-('Oakland, California', 7122)
-('Rotterdam', 7121)
-('Antwerp', 7119)
-('types of inhabited localities in Russia', 7116)
-('Senegal', 7115)
-('Season (sports)', 7109)
-('Holy Roman Empire', 7106)
-('Juris Doctor', 7102)
-('Osaka', 7101)
-('golf', 7100)
-('Franklin D. Roosevelt', 7090)
-('Newspapers.com', 7084)
-('submarine', 7084)
-('Football League Cup', 7082)
-('Honduras', 7080)
-('MHz', 7075)
-('Protestant', 7072)
-('European Parliament', 7071)
-('Indianapolis', 7068)
-('Thoroughbred', 7063)
-('Denver', 7059)
-('Canberra', 7057)
-('Mozambique', 7055)
-('Chelsea F.C.', 7046)
-('New Brunswick', 7042)
-('Tampa, Florida', 7040)
-('blues', 7036)
-('Cleveland', 7026)
-('political party', 7025)
-('The Times of India', 7007)
-('Run batted in', 7006)
-('Christmas', 7004)
-('Town', 7004)
-('Japanese people', 7003)
-('Somerset', 7003)
-('agriculture', 7002)
-('Queen Victoria', 7001)
-('Allies of World War II', 6998)
-('Central America', 6990)
-('IBM', 6990)
-('U.S. Navy', 6978)
-('Wyoming', 6977)
-('Chicago Cubs', 6975)
-('Euthyneura', 6964)
-('Salt Lake City', 6959)
-('Richard Nixon', 6956)
-('Normandy', 6954)
-('Winston Churchill', 6945)
-('Gothenburg', 6934)
-('percussion', 6930)
-('Digital Spy', 6922)
-('University of Toronto', 6921)
-('Zambia', 6920)
-('Andes', 6919)
-('Bengali language', 6902)
-('Qatar', 6898)
-('Renaissance', 6897)
-('Tel Aviv', 6888)
-('Liberal Party (UK)', 6884)
-('Compact disc', 6881)
-('Rhode Island', 6862)
-('Las Vegas, Nevada', 6857)
-('Karachi', 6848)
-('The Simpsons', 6845)
-('House of Lords', 6838)
-('lawyer', 6836)
-('Borneo', 6830)
-('Baghdad', 6824)
-('Family (biology)', 6820)
-('tuberculosis', 6800)
-('Cambridge', 6799)
-('drums', 6798)
-('NCAA', 6787)
-('New Testament', 6781)
-('The Hague', 6775)
-('mountain', 6773)
-('Madonna (entertainer)', 6764)
-('Lyon', 6759)
-('Sofia', 6758)
-('airport', 6755)
-('San Jose, California', 6747)
-('St. Louis Cardinals', 6742)
-('Exhibition game', 6724)
-('Mongolia', 6715)
+United States 403095
+Animal 179816
+France 149450
+Arthropod 134051
+India 131814
+World War II 128344
+Insect 127139
+Germany 126493
+Canada 123462
+United Kingdom 116515
+List of countries 116429
+England 115587
+New York City 109490
+toollabs:kasparbot/persondata/ 108430
+London 101106
+Australia 100046
+The New York Times 96385
+Italy 93924
+Japan 93085
+Iran 90637
+Lepidoptera 83449
+California 80114
+moth 77064
+Poland 76618
+Association football 74677
+Russia 73263
+National Register of Historic Places 72672
+association football 69981
+Countries of the world 69294
+Spain 68421
+Allmusic 66019
+China 65725
+English language 64684
+Provinces of Iran 62848
+Counties of Iran 62749
+World War I 62578
+village 62453
+Bakhsh 62441
+Rural Districts of Iran 62197
+Brazil 62051
+Iran Standard Time 60389
+Iran Daylight Time 59862
+Geographic Names Information System 59503
+Voivodeships of Poland 55584
+Powiat 55554
+Gmina 55494
+Romanize 55253
+Paris 54541
+Netherlands 54458
+Mexico 54055
+Political divisions of the United States 53811
+Sweden 53534
+The Guardian 51567
+Google Books 49334
+New York (state) 48996
+Los Angeles 48906
+Scotland 48647
+species 47899
+Soviet Union 46713
+census 46711
+United States Census Bureau 45890
+BBC 45124
+Europe 44549
+genus 44486
+Billboard (magazine) 44274
+Turkey 44152
+South Africa 43281
+Switzerland 43268
+Norway 43263
+U.S. state 43122
+American football 42945
+New Zealand 42636
+Democratic Party (United States) 41862
+Republican Party (United States) 41576
+Angiosperms 41571
+Texas 41346
+ZIP code 41072
+population density 41016
+Departments of France 40053
+Philippines 39971
+Communes of France 39754
+Federal Information Processing Standard 39174
+Romania 38858
+New York Times 38631
+Ontario 38528
+Central European Time 38258
+Chicago 37703
+family (biology) 37702
+Google News 37450
+Washington, D.C. 37241
+List of sovereign states 36978
+Argentina 36758
+Austria 36745
+2010 United States Census 36233
+Pennsylvania 36062
+per capita income 35603
+YouTube 35431
+Belgium 35341
+United States Geological Survey 35260
+poverty line 34945
+Central European Summer Time 34717
+Marriage 34437
+Beetle 34402
+Florida 34030
+American Civil War 33950
+Pakistan 33069
+South Korea 32897
+Midfielder 32878
+Israel 32806
+AllMusic 32720
+Toronto 32625
+{{TALKPAGENAME}} 32526
+Eudicots 32372
+White (U.S. Census) 32320
+Greece 32296
+bugzilla:42616 32247
+beetle 31839
+Member of Parliament 31628
+Berlin 31513
+Denmark 31456
+Rome 31455
+Ireland 31078
+Los Angeles Times 30640
+gastropod 30189
+Finland 29994
+Indonesia 29900
+basketball 29837
+Plantae 29333
+Illinois 29310
+Animalia 29207
+Pop music 29185
+Hispanic (U.S. Census) 29158
+Defender (association football) 29065
+Latino (U.S. Census) 29005
+Sydney 28719
+Roman Catholic 28450
+Ukraine 28408
+Moscow 28353
+cricket 28296
+States and territories of India 28232
+Major League Baseball 28155
+guitar 28044
+Hungary 28033
+Rock music 27895
+Indian Standard Time 27713
+Ohio 27645
+Philadelphia 27462
+National Football League 27071
+Portugal 26985
+mollusk 26979
+United States Navy 26977
+Race (United States Census) 26837
+Malaysia 26799
+Associated Press 26661
+North America 26590
+Polyphaga 26406
+Thailand 26177
+Native American (U.S. Census) 25939
+ice hockey 25888
+Egypt 25855
+Second World War 25817
+Postal Index Number 25792
+Billboard Hot 100 25774
+French language 25756
+New Jersey 25746
+Quebec 25705
+New South Wales 25623
+Melbourne 25601
+Virginia 25399
+Forward (association football) 25207
+Peru 25081
+African American (U.S. Census) 24856
+Hong Kong 24831
+Wales 24710
+Mollusca 24534
+Massachusetts 24512
+Czech Republic 24488
+Colombia 24448
+British Columbia 24359
+football (soccer) 24202
+United Nations 24186
+Asian (U.S. Census) 24152
+List of districts of India 24068
+United States Army 23961
+San Francisco 23961
+Singapore 23943
+Eastern Time Zone 23881
+Montreal 23695
+Vienna 23652
+Spanish language 23560
+Unincorporated area 23552
+bass guitar 23504
+Harvard University 23422
+wingspan 23303
+college football 23276
+Latin 23224
+Cerambycidae 23188
+Royal Navy 23183
+Chordata 23118
+Boston 22881
+Sri Lanka 22836
+Taiwan 22675
+Gastropoda 22669
+sea snail 22469
+Tokyo 22464
+German language 22358
+NBC 22215
+Queensland 22140
+Rolling Stone 22121
+Serbia 22093
+Eastern European Time 22039
+piano 22026
+United States House of Representatives 22023
+Bulgaria 22009
+UK Singles Chart 21955
+Bachelor of Arts 21798
+Billboard 200 21506
+Endemism 21475
+Chile 21401
+The Times 21360
+Music download 21255
+Republic of Ireland 21223
+Eastern European Summer Time 21022
+Dublin 20923
+Beijing 20873
+Ottoman Empire 20691
+Islam 20598
+The Independent 20397
+CBS 20367
+Album 20239
+American Broadcasting Company 20209
+Michigan 20175
+Croatia 19968
+President of the United States 19738
+Africa 19718
+Venezuela 19694
+The Daily Telegraph 19636
+North Carolina 19616
+Los Angeles, California 19517
+Nigeria 19515
+Reuters 19392
+Missouri 19365
+Vietnam 19335
+Catholic Church 19273
+Minnesota 19064
+The Washington Post 18933
+Cuba 18925
+BBC News 18914
+Plant 18876
+Stockholm 18614
+Munich 18532
+USA Today 18477
+United States Senate 18465
+Metacritic 18421
+Glasgow 18390
+Maryland 18322
+Warsaw 18308
+jazz 18286
+studio album 18255
+Kenya 18251
+Slovenia 18221
+Roman Catholic Church 18184
+Georgia (U.S. state) 18173
+first-class cricket 18003
+Barack Obama 17911
+tennis 17849
+Iraq 17844
+European Union 17809
+Prague 17787
+Athens 17711
+Nazi Germany 17701
+Madrid 17682
+Microsoft Windows 17653
+Variety (magazine) 17652
+First World War 17647
+Conservative Party (UK) 17626
+People's Republic of China 17608
+Indiana 17577
+Entertainment Weekly 17556
+Jazz 17494
+Drum kit 17494
+politician 17460
+North American Central Time Zone 17454
+Afghanistan 17416
+Wisconsin 17372
+Northern Ireland 17295
+baseball 17237
+Amsterdam 17173
+Arizona 17133
+Barcelona 17101
+Oregon 17099
+Manchester 17072
+Columbia University 16999
+Australian rules football 16918
+Oxford University Press 16884
+NASA 16869
+Columbia Records 16835
+Western Australia 16717
+rugby union 16689
+Alberta 16654
+Christianity 16563
+Milan 16551
+Louisiana 16458
+Spam blacklist 16437
+Spam blacklist/Log 16436
+Asia 16430
+habitat 16397
+Ecuador 16384
+Slovakia 16326
+Victoria (Australia) 16140
+Singing 16131
+English people 16105
+Nepal 15999
+Country music 15992
+Kentucky 15976
+ESPN 15929
+Edinburgh 15889
+radio station 15851
+United States dollar 15850
+Hip hop music 15826
+CNN 15820
+watt 15807
+Greek language 15796
+Colorado 15779
+Great Britain 15775
+Bangladesh 15707
+Rio de Janeiro 15654
+Estonia 15652
+Vietnam War 15642
+Syria 15642
+Time (magazine) 15641
+Atlanta 15636
+Vancouver 15634
+South America 15615
+drama film 15571
+Morocco 15336
+Portland, Oregon 15288
+Australian Football League 15273
+British Army 15241
+Tamil Nadu 15217
+Mexico City 15212
+IGN 15208
+North American Eastern Time Zone 15179
+Manhattan 15150
+Twitter 15043
+Mumbai 15037
+Buenos Aires 14998
+DVD 14968
+United States Census, 2000 14946
+National Hockey League 14876
+Canadians 14871
+Tennessee 14820
+Olympic Games 14798
+Hamburg 14765
+Facebook 14736
+midfielder 14723
+CD single 14691
+Seattle 14684
+George W. Bush 14610
+Asterids 14610
+Wall Street Journal 14581
+MTV 14570
+Birmingham 14561
+Rotten Tomatoes 14550
+Copenhagen 14537
+Brooklyn 14523
+Hawaii 14501
+Labour Party (UK) 14500
+gene 14449
+Budapest 14403
+Goalkeeper (association football) 14358
+Czechoslovakia 14330
+Liverpool 14277
+Oslo 14258
+Russian Empire 14256
+protein 14188
+Caenogastropoda 14182
+Puerto Rico 14113
+Chicago, Illinois 14113
+Brussels 14099
+actor 14086
+Yale University 14084
+Tamil language 14031
+drum kit 14015
+tools:~dispenser/cgi-bin/dabfix.py 13963
+United States of America 13908
+Alternative rock 13880
+New Orleans 13880
+Azerbaijan 13872
+FA Cup 13818
+Istanbul 13650
+Algeria 13638
+Seoul 13633
+Bolivia 13577
+Christian 13546
+Stanford University 13537
+science fiction 13537
+Pacific Ocean 13518
+Order of the British Empire 13493
+Actinopterygii 13473
+country music 13388
+West Germany 13328
+Tanzania 13311
+Alabama 13265
+Italian language 13218
+tributary 13207
+Amazon.com 13196
+National Park Service 13196
+Kerala 13164
+Brisbane 13158
+Connecticut 13074
+United States Congress 13067
+Mayor 13050
+Rosids 13026
+Bosnia and Herzegovina 12842
+Nashville, Tennessee 12781
+Church of England 12776
+Jerusalem 12763
+Atlantic Ocean 12744
+United States Air Force 12698
+Great Depression 12666
+Lebanon 12665
+Chicago Tribune 12657
+University of Michigan 12645
+Internet Archive 12640
+Middle Ages 12633
+South Carolina 12620
+Maharashtra 12608
+composer 12564
+television 12560
+Alaska 12547
+Saudi Arabia 12545
+Federal Communications Commission 12529
+The Hollywood Reporter 12484
+unincorporated community 12381
+Madagascar 12366
+Lithuania 12339
+West Virginia 12337
+film 12319
+Chordate 12245
+album 12233
+Wikidata 12227
+Hypsogastropoda 12199
+First-class cricket 12193
+iTunes 12170
+marine (ocean) 12132
+Royal Air Force 12106
+Utah 12104
+Panama 12094
+Nevada 12075
+ARIA Charts 12070
+Ghana 12042
+New Mexico 11998
+mathematics 11990
+Nova Scotia 11982
+comedy film 11970
+Detroit 11944
+UNESCO 11934
+Ethiopia 11921
+unincorporated area 11920
+alternative rock 11910
+Boston, Massachusetts 11904
+template:webarchive 11856
+Washington (state) 11826
+2012 Summer Olympics 11820
+Muslim 11815
+video game 11803
+Oklahoma 11799
+City 11792
+Shanghai 11786
+Roman Empire 11759
+South Australia 11757
+Houston 11745
+bird 11741
+Cold War 11678
+UK 11668
+Native Americans in the United States 11606
+municipality 11589
+Iceland 11533
+Korean War 11530
+Microsoft 11523
+Bavaria 11519
+Kansas 11519
+Princeton University 11491
+Monocots 11444
+Iowa 11400
+Uganda 11398
+Ottawa 11391
+Helsinki 11358
+Jamaica 11322
+rock music 11320
+Kent 11292
+Cyprus 11287
+Auckland 11255
+PDF 11241
+high school 11192
+San Diego 11182
+Belgrade 11172
+Batting average 11135
+Karnataka 11116
+University of California, Berkeley 11115
+Saint Petersburg 11108
+record producer 11106
+Pitchfork Media 11105
+pitcher 11066
+Costa Rica 11065
+census-designated place 11064
+University of Oxford 11013
+Middle East 10999
+Belarus 10986
+Latvia 10958
+pop music 10947
+Broadway theatre 10925
+Russian language 10894
+Maine 10871
+Buddhism 10849
+Pacific Islander (U.S. Census) 10824
+Internet Movie Database 10823
+Irish people 10765
+plant 10757
+Hindi 10722
+Academy Award 10722
+National Basketball Association 10714
+Washington Post 10700
+music video 10677
+2008 Summer Olympics 10670
+Bill Clinton 10669
+Albania 10665
+Captain (association football) 10665
+University of Cambridge 10652
+Crambidae 10626
+Cambridge University Press 10606
+EMI 10561
+railway station 10513
+Hindi language 10503
+Georgia (country) 10495
+Köppen climate classification 10482
+St. Louis, Missouri 10469
+Fox Broadcasting Company 10458
+Mississippi 10455
+enzyme 10407
+Korea 10405
+Miami 10389
+Venice 10371
+rugby league 10351
+Lancashire 10302
+Pitcher 10269
+Austin, Texas 10249
+Arkansas 10243
+Pittsburgh 10221
+UK Albums Chart 10220
+Atlanta, Georgia 10217
+Lisbon 10212
+Democratic Republic of the Congo 10208
+Florence 10204
+Cornell University 10171
+Naples 10161
+Philadelphia, Pennsylvania 10147
+Cameroon 10146
+Kazakhstan 10095
+Central Time Zone 10065
+Hollywood 10061
+Belfast 10058
+screen reader 10041
+Atlantic Records 10038
+Baltimore 10037
+Uruguay 10029
+NME 10024
+San Francisco, California 9979
+Forbes 9942
+brackets 9918
+FM broadcasting 9915
+Earth 9874
+African American 9867
+Manitoba 9855
+Armenia 9836
+Uttar Pradesh 9807
+Cairo 9793
+Bass guitar 9775
+silent film 9771
+Striker (association football) 9770
+Guatemala 9767
+New York University 9745
+Hindu 9738
+limestone 9723
+Malta 9718
+Saskatchewan 9715
+American Revolutionary War 9705
+Public school (government funded) 9700
+Extended play 9692
+United Arab Emirates 9687
+Carl Linnaeus 9684
+Delhi 9681
+Daily Mail 9652
+Adelaide 9632
+Australian Labor Party 9617
+Linux 9608
+Heavy metal music 9592
+The Wall Street Journal 9586
+Earned run average 9553
+Supreme Court of the United States 9543
+Record producer 9541
+Bristol 9529
+Prometheus Global Media 9521
+West Bengal 9515
+Adolf Hitler 9510
+Andhra Pradesh 9508
+punk rock 9505
+Ronald Reagan 9503
+Tasmania 9492
+University of Chicago 9490
+São Paulo 9489
+Warner Bros. Records 9485
+Manila 9482
+Zimbabwe 9482
+Hangul 9471
+Bangkok 9458
+Caribbean 9455
+forest 9453
+Marvel Comics 9440
+Contemporary R&amp;B 9436
+The Hindu 9429
+2016 Summer Olympics 9421
+volleyball 9413
+The A.V. Club 9399
+Channel 4 9392
+Warner Bros. 9389
+United States Marine Corps 9384
+Antarctica 9370
+Tunisia 9369
+The Beatles 9356
+Species 9342
+Dominican Republic 9284
+Telugu language 9272
+Wikipedia 9265
+comune 9244
+Columbus, Ohio 9236
+Turin 9233
+AP Poll 9218
+violin 9194
+anime 9181
+county seat 9164
+Oxford 9141
+Library of Congress 9140
+Hinduism 9138
+Masovian Voivodeship 9121
+Phoenix, Arizona 9114
+Sicily 9078
+Dallas 9067
+Indian National Congress 9063
+NATO 9056
+UEFA 9054
+Yugoslavia 9043
+actress 9033
+Census-designated place 9032
+Kansas City, Missouri 9031
+Google 9031
+Kiev 9026
+Arabic language 8999
+trumpet 8999
+William Shakespeare 8992
+Ancient Rome 8991
+Paramount Pictures 8986
+Burma 8983
+Cornwall 8975
+Capitol Records 8969
+Regions of France 8954
+Cologne 8954
+Folk music 8930
+Houston, Texas 8922
+Papua New Guinea 8920
+Single-player video game 8916
+BBC Sport 8895
+Chinese language 8892
+Chennai 8886
+ProQuest 8885
+Buffalo, New York 8879
+The Sydney Morning Herald 8876
+Keyboard instrument 8867
+journalist 8859
+North Korea 8852
+Gramophone record 8847
+habitat loss 8846
+listed building 8836
+Bible 8827
+RCA Records 8826
+Hot Country Songs 8826
+Premier League 8823
+Strikeout 8823
+German Empire 8817
+Byzantine Empire 8816
+Leeds 8804
+Myanmar 8789
+Portuguese language 8789
+University of Pennsylvania 8784
+Surrey 8781
+Basketball 8770
+Provinces of Turkey 8742
+film director 8728
+Grammy Award 8720
+butterfly 8710
+singer 8709
+Massachusetts Institute of Technology 8695
+HBO 8691
+Internet 8690
+National Collegiate Athletic Association 8685
+Fair use 8683
+Home run 8660
+Luxembourg 8617
+Independent (politician) 8608
+Cardiff 8597
+Swimming (sport) 8585
+CEO 8573
+Memphis, Tennessee 8573
+Neogastropoda 8552
+Geneva 8545
+New York Yankees 8535
+Bucharest 8530
+French Revolution 8522
+Union Army 8513
+Discogs 8508
+Jordan 8506
+Apple Inc. 8501
+Hardcover 8495
+Richmond, Virginia 8494
+Lok Sabha 8486
+iTunes Store 8485
+2004 Summer Olympics 8481
+Bachelor of Science 8465
+indie rock 8463
+UEFA Champions League 8462
+Master of Arts 8462
+Austria-Hungary 8453
+Yahoo! 8450
+New Delhi 8448
+American Hockey League 8441
+songwriter 8429
+Epic Records 8428
+East Germany 8417
+Louisville, Kentucky 8407
+Montana 8395
+Baltimore, Maryland 8394
+Country 8394
+Manchester United F.C. 8373
+RPM (magazine) 8362
+White House 8356
+hard rock 8355
+Parliament of the United Kingdom 8352
+Paperback 8348
+singing 8341
+New Hampshire 8335
+Sudan 8326
+Mississippi River 8325
+University of Southern California 8313
+Australian Broadcasting Corporation 8309
+Cape Town 8305
+Angola 8288
+flowering plant 8285
+single (music) 8267
+Nebraska 8261
+Hot R&amp;B/Hip-Hop Songs 8254
+Oricon 8253
+the Football League 8245
+Jewish 8244
+Kolkata 8240
+double bass 8239
+List A cricket 8228
+New England 8219
+Athletics (sport) 8218
+Japanese language 8216
+Anglican 8216
+river 8214
+Indie rock 8213
+British Empire 8211
+population 8206
+Single (music) 8199
+Judaism 8186
+poet 8182
+Cambodia 8181
+Sanskrit 8172
+electric guitar 8166
+Essex 8163
+Johannesburg 8162
+R&amp;B 8159
+opera 8147
+Sheffield 8145
+Republic of Macedonia 8131
+cancer 8130
+Doctor Who 8126
+Stuttgart 8117
+World Register of Marine Species 8114
+The New Yorker 8113
+FIFA 8103
+Fungi 8097
+Win–loss record (pitching) 8086
+Confederate States of America 8085
+Devon 8062
+USSR 8049
+The Huffington Post 8043
+soccer 8032
+civil parish 7995
+singer-songwriter 7963
+compilation album 7950
+New Guinea 7944
+San Diego, California 7943
+sandstone 7933
+Bollywood 7932
+Libya 7918
+DC Comics 7916
+Liverpool F.C. 7910
+Minneapolis 7899
+Calgary 7893
+Tehran 7891
+Haiti 7890
+Arsenal F.C. 7877
+NPR 7846
+manga 7841
+Orlando, Florida 7825
+Actor 7822
+Catholic 7818
+Dubai 7791
+Elizabeth II 7783
+Abraham Lincoln 7771
+Doctor of Philosophy 7766
+Germans 7754
+Zagreb 7731
+lake 7725
+Yemen 7719
+Indian Ocean 7696
+Paraguay 7694
+Arthropoda 7690
+Constantinople 7682
+Mediterranean Sea 7676
+Poznań 7672
+vocals 7669
+Soul music 7665
+Yorkshire 7660
+Vermont 7651
+Catalonia 7641
+author 7633
+PopMatters 7628
+Frankfurt 7624
+Recording Industry Association of America 7611
+Hampshire 7601
+Idaho 7589
+1080i 7584
+Ford Motor Company 7584
+Winnipeg 7581
+Kraków 7574
+Districts of Turkey 7567
+Michael Jackson 7565
+Bob Dylan 7564
+Painting 7561
+Autonomous communities of Spain 7548
+Oxford University 7534
+Official Charts Company 7531
+Noctuidae 7530
+Edmonton 7519
+Kuala Lumpur 7513
+ITV (TV network) 7501
+Dutch language 7467
+PBS 7466
+The Age 7458
+2000 Summer Olympics 7433
+Bangalore 7432
+Arabic 7432
+Leipzig 7429
+Southeast Asia 7411
+Boston Red Sox 7407
+Americans 7404
+philosophy 7404
+architect 7404
+Medal of Honor 7403
+Jesus 7396
+newspaper 7393
+Android (operating system) 7383
+Universal Music Group 7373
+Midfielder (association football) 7370
+side platform 7366
+Provinces of Spain 7366
+Erebidae 7352
+Namibia 7345
+Federal Information Processing Standards 7340
+Cincinnati 7340
+House of Commons of the United Kingdom 7340
+Seattle, Washington 7335
+Dallas, Texas 7332
+Latin America 7328
+Test cricket 7327
+CricketArchive 7326
+Cleveland, Ohio 7314
+Geometridae 7314
+Charleston, South Carolina 7313
+Provinces and territories of Canada 7313
+Formula One 7303
+UTM parameters 7301
+Jakarta 7285
+Donald Trump 7271
+San Francisco Chronicle 7266
+John F. Kennedy 7262
+Heterobranchia 7256
+screenwriter 7256
+Detroit, Michigan 7244
+Gujarat 7241
+Elvis Presley 7240
+Punk rock 7226
+GameSpot 7225
+Defender (football) 7225
+Australian Recording Industry Association 7215
+batting average 7209
+Postal code 7197
+Socialist Federal Republic of Yugoslavia 7196
+Tortricidae 7190
+Pittsburgh, Pennsylvania 7180
+George Washington 7155
+Nicaragua 7145
+Persian language 7145
+Compact Disc 7136
+Somalia 7131
+Fiji 7127
+endemism 7126
+Oakland, California 7122
+Rotterdam 7118
+Antwerp 7117
+types of inhabited localities in Russia 7116
+Senegal 7114
+Season (sports) 7109
+Juris Doctor 7102
+golf 7100
+Osaka 7098
+Holy Roman Empire 7097
+Newspapers.com 7083
+submarine 7082
+Football League Cup 7081
+Honduras 7080
+Franklin D. Roosevelt 7079
+MHz 7075
+Protestant 7071
+Indianapolis 7068
+European Parliament 7068
+Thoroughbred 7061
+Denver 7058
+Canberra 7055
+Mozambique 7054
+Chelsea F.C. 7043
+New Brunswick 7041
+Tampa, Florida 7038
+blues 7035
+Cleveland 7024
+political party 7024
+The Times of India 7007
+Run batted in 7006
+Japanese people 7003
+Christmas 7002
+agriculture 7001
+Somerset 7000
+Queen Victoria 6997
+IBM 6988
+Town 6986
+Central America 6985
+Allies of World War II 6982
+Wyoming 6976
+Chicago Cubs 6975
+Euthyneura 6964
+Salt Lake City 6959
+U.S. Navy 6956
+Normandy 6953
+Richard Nixon 6944
+Gothenburg 6931
+percussion 6930
+Winston Churchill 6925
+Digital Spy 6922
+University of Toronto 6921
+Zambia 6919
+Andes 6917
+Bengali language 6902
+Qatar 6898
+Renaissance 6893
+Tel Aviv 6886
+Liberal Party (UK) 6884
+Compact disc 6881
+Rhode Island 6860
+Las Vegas, Nevada 6857
+Karachi 6848
+The Simpsons 6843
+lawyer 6836
+House of Lords 6833
+Borneo 6829
+Baghdad 6824
+Family (biology) 6814
+tuberculosis 6800
+Cambridge 6798
+drums 6798
+NCAA 6787
+New Testament 6780
+The Hague 6772
+Madonna (entertainer) 6758
+Lyon 6756
+airport 6754
+mountain 6754

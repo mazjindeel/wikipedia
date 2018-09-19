@@ -46,7 +46,7 @@ in_file = open(sys.argv[2], 'w')
 for title, incomings in pages_sorted:
   count = len(incomings)
   in_file.write(f'{title} {count}\n')
-#in_file.close()
+in_file.close()
 
 
 
